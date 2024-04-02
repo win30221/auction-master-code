@@ -9,12 +9,12 @@ import (
 const (
 
 	// 競標商品狀態
-	WATCHING           int = 1  // 盯標中
-	HIGHEST_BIDDED     int = 11 // 系統出價最高者
-	NOT_HIGHEST_BIDDED int = 12 // 系統已出價但未最高者
-	STOP_WATCHING      int = 13 // 停止盯標
-	CLOSED             int = 21 // 商品關閉時已達預期金額
-	CANCELED           int = 22 // 商品關閉時未達預期金額
+	Watching         int = 1  // 盯標中
+	HighestBidded    int = 11 // 系統出價最高者
+	NotHighestBidded int = 12 // 系統已出價但未最高者
+	StopWatching     int = 13 // 停止盯標
+	Closed           int = 21 // 商品關閉時已達預期金額
+	Canceled         int = 22 // 商品關閉時未達預期金額
 )
 
 type AuctionItem struct {
