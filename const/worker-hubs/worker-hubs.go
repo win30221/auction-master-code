@@ -11,9 +11,9 @@ const (
 	SellerType  = "Seller"
 	WatcherType = "Watcher"
 
-	ActiveStatus                  int = 1  // 啟用中
-	AwaitingSetupCompletionStatus int = 2  // 等待建立完畢
-	InvalidatedStatus             int = 99 // 已失效
+	ActiveStatus                  uint8 = 1  // 啟用中
+	AwaitingSetupCompletionStatus uint8 = 2  // 等待建立完畢
+	InvalidatedStatus             uint8 = 99 // 已失效
 
 )
 

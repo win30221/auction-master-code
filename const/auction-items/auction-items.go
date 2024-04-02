@@ -9,12 +9,12 @@ import (
 const (
 
 	// 競標商品狀態
-	Watching         int = 1  // 盯標中
-	HighestBidded    int = 11 // 系統出價最高者
-	NotHighestBidded int = 12 // 系統已出價但未最高者
-	StopWatching     int = 13 // 停止盯標
-	Closed           int = 21 // 商品關閉時已達預期金額
-	Canceled         int = 22 // 商品關閉時未達預期金額
+	Watching         uint8 = 1  // 盯標中
+	HighestBidded    uint8 = 11 // 系統出價最高者
+	NotHighestBidded uint8 = 12 // 系統已出價但未最高者
+	StopWatching     uint8 = 13 // 停止盯標
+	Closed           uint8 = 21 // 商品關閉時已達預期金額
+	Canceled         uint8 = 22 // 商品關閉時未達預期金額
 )
 
 type AuctionItem struct {
@@ -30,7 +30,7 @@ type AuctionItem struct {
 	HighestPrice int       `form:"highestPrice" json:"highestPrice"`
 	CloseAt      time.Time `form:"closeAt" json:"closeAt"`
 	ClosedPrice  int       `form:"closedPrice" json:"closedPrice"`
-	Status       int       `form:"status" json:"status"`
+	Status       uint8     `form:"status" json:"status"`
 	CreatedAt    time.Time `form:"createdAt" json:"createdAt"`
 	UpdatedAt    time.Time `form:"updatedAt" json:"updatedAt"`
 }
@@ -48,7 +48,7 @@ type WatchedAuctionItem struct {
 	HighestPrice int                  `json:"highestPrice"`
 	CloseAt      time.Time            `json:"closeAt"`
 	ClosedPrice  int                  `json:"closedPrice"`
-	Status       int                  `json:"status"`
+	Status       uint8                `json:"status"`
 	CreatedAt    time.Time            `json:"createdAt"`
 	UpdatedAt    time.Time            `json:"updatedAt"`
 }

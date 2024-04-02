@@ -7,9 +7,8 @@ import (
 
 const (
 	// 出價後狀態
-	HighestBiddingStatus   int = 1 // 系統出價最高者
-	NotHighestBiddedStatus int = 2 // 系統已出價但未最高者
-	HasBeenBlocked         int = 3 // 被賣家封鎖
+	HighestBiddingStatus   uint8 = 1 // 系統出價最高者
+	NotHighestBiddedStatus uint8 = 2 // 系統已出價但未最高者
 )
 
 var (
