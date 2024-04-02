@@ -8,8 +8,13 @@ import (
 
 const (
 	// Worker 類型
-	WorkerTypeSeller  = "Seller"
-	WorkerTypeWatcher = "Watcher"
+	SellerType  = "Seller"
+	WatcherType = "Watcher"
+
+	ActiveStatus                  int = 1  // 啟用中
+	AwaitingSetupCompletionStatus int = 2  // 等待建立完畢
+	InvalidatedStatus             int = 99 // 已失效
+
 )
 
 type Worker struct {
@@ -19,11 +24,11 @@ type Worker struct {
 	Status        uint8              `bson:"status" json:"status" form:"status"`
 	Location      string             `bson:"location" json:"location" form:"location"`
 	Name          string             `bson:"name" json:"name" form:"name"`
-	Phone         string             `bson:"phone,omitempty" json:"phone,omitempty" form:"phone"`
-	PostalCode    string             `bson:"postalCode,omitempty" json:"postalCode,omitempty" form:"postalCode"`
-	Birthday      time.Time          `bson:"birthday,omitempty" json:"birthday,omitempty" form:"birthday"`
-	Email         string             `bson:"email,omitempty" json:"email,omitempty" form:"email"`
-	SimCardNumber string             `bson:"simCardNumber,omitempty" json:"simCardNumber,omitempty" form:"simCardNumber"`
-	ActivationAt  time.Time          `bson:"activationAt,omitempty" json:"activationAt,omitempty" form:"activationAt"`
-	Remark        string             `bson:"remark,omitempty" json:"remark,omitempty" form:"remark"`
+	Phone         string             `bson:"phone" json:"phone" form:"phone"`
+	PostalCode    string             `bson:"postalCode" json:"postalCode" form:"postalCode"`
+	Birthday      time.Time          `bson:"birthday" json:"birthday" form:"birthday"`
+	Email         string             `bson:"email" json:"email" form:"email"`
+	SimCardNumber string             `bson:"simCardNumber" json:"simCardNumber" form:"simCardNumber"`
+	ActivationAt  time.Time          `bson:"activationAt" json:"activationAt" form:"activationAt"`
+	Remark        string             `bson:"remark" json:"remark" form:"remark"`
 }
