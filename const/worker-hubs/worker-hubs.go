@@ -24,4 +24,6 @@ type Worker struct {
 	Birthday      time.Time          `bson:"birthday,omitempty" json:"birthday,omitempty" form:"birthday"`
 	Email         string             `bson:"email,omitempty" json:"email,omitempty" form:"email"`
 	SimCardNumber string             `bson:"simCardNumber,omitempty" json:"simCardNumber,omitempty" form:"simCardNumber"`
+	ActivationAt  time.Time          `bson:"activationAt,omitempty" json:"activationAt,omitempty" form:"activationAt"`
+	Remark        string             `bson:"remark,omitempty" json:"remark,omitempty" form:"remark"`
 }
