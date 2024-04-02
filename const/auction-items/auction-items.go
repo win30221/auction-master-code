@@ -15,6 +15,7 @@ const (
 	StopWatching     uint8 = 13 // 停止盯標
 	Closed           uint8 = 21 // 商品關閉時已達預期金額
 	Canceled         uint8 = 22 // 商品關閉時未達預期金額
+	Unsold           uint8 = 23 // 流標
 )
 
 type AuctionItem struct {
@@ -25,7 +26,7 @@ type AuctionItem struct {
 	AuctionID    string    `form:"auctionID" json:"auctionID"`
 	AuctionName  string    `form:"auctionName" json:"auctionName"` // 有 itemID 後就移除
 	AuctionPhoto string    `form:"auctionPhoto" json:"auctionPhoto"`
-	TargetPrice  int       `form:"targetPrice" json:"targetPrice"` // 有 itemID 後就移除
+	ReservePrice int       `form:"reservePrice" json:"reservePrice"` // 有 itemID 後就移除
 	CurrentPrice int       `form:"currentPrice" json:"currentPrice"`
 	HighestPrice int       `form:"highestPrice" json:"highestPrice"`
 	CloseAt      time.Time `form:"closeAt" json:"closeAt"`
