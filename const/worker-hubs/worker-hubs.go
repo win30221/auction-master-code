@@ -11,10 +11,10 @@ const (
 	SellerType  = "Seller"
 	WatcherType = "Watcher"
 
+	// Worker 狀態
 	ActiveStatus                  uint8 = 1  // 啟用中
 	AwaitingSetupCompletionStatus uint8 = 2  // 等待建立完畢
 	InvalidatedStatus             uint8 = 99 // 已失效
-
 )
 
 type Worker struct {
