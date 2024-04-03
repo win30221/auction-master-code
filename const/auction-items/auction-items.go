@@ -8,13 +8,16 @@ import (
 
 const (
 	// 競標商品狀態
-	WatchingStatus         uint8 = 1  // 盯標中
+	WatchingStatus uint8 = 1 // 盯標中
+
 	HighestBiddedStatus    uint8 = 11 // 系統出價最高者
 	NotHighestBiddedStatus uint8 = 12 // 系統已出價但未最高者
 	StopWatchingStatus     uint8 = 13 // 停止盯標
-	ClosedStatus           uint8 = 21 // 商品關閉時已達預期金額
-	CanceledStatus         uint8 = 22 // 商品關閉時未達預期金額
-	UnsoldStatus           uint8 = 23 // 流標
+	ClosedStatus           uint8 = 14 // 結標
+
+	SoldStatus               uint8 = 21 // 售出
+	CompanyRepurchasedStatus uint8 = 22 // 被公司買回
+	CanceledStatus           uint8 = 23 // 手動取消
 )
 
 // 競標商品 schema

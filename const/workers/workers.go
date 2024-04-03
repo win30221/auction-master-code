@@ -2,6 +2,7 @@ package workers
 
 import (
 	"fmt"
+	"net/http"
 	"time"
 )
 
@@ -15,12 +16,21 @@ var (
 	ErrLoginFailed = fmt.Errorf("Login failed")
 )
 
-type BidderInfo struct {
-	Account   string    `json:"account"`
-	Rating    int       `json:"rating"`
-	BidAmount int       `json:"bidAmount"`
-	Quantity  int       `json:"quantity"`
-	LastBidAt time.Time `json:"lastBidAt"`
+type Cookie struct {
+	Name     string        `json:"name"`
+	Value    string        `json:"value"`
+	Path     string        `json:"path,omitempty"`
+	Domain   string        `json:"domain,omitempty"`
+	Expires  time.Time     `json:"expirationDate,omitempty"`
+	Secure   bool          `json:"secure,omitempty"`
+	HttpOnly bool          `json:"httpOnly,omitempty"`
+	SameSite http.SameSite `json:"sameSite,omitempty"`
+}
+
+type GetAuctionItemInfo struct {
+	AuctionItemInfo
+	BidderInfo []BidderInfo `json:"bidderInfo"`
+	Countdown  int          `json:"countdown"`
 }
 
 type AuctionItemInfo struct {
@@ -31,8 +41,10 @@ type AuctionItemInfo struct {
 	CloseAt      time.Time `json:"closeAt"`
 }
 
-type GetAuctionItemInfo struct {
-	AuctionItemInfo
-	BidderInfo []BidderInfo `json:"bidderInfo"`
-	Countdown  int          `json:"countdown"`
+type BidderInfo struct {
+	Account   string    `json:"account"`
+	Rating    int       `json:"rating"`
+	BidAmount int       `json:"bidAmount"`
+	Quantity  int       `json:"quantity"`
+	LastBidAt time.Time `json:"lastBidAt"`
 }
