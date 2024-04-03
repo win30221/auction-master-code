@@ -35,6 +35,7 @@ type GetAuctionItemInfo struct {
 
 type AuctionItemInfo struct {
 	IsClosed     bool      `json:"isClosed"`
+	SellerName   string    `json:"sellerName"`
 	Name         string    `json:"name"`
 	Photo        string    `json:"photo"`
 	CurrentPrice int       `json:"currentPrice"`
