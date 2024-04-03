@@ -2,8 +2,6 @@ package auctionitems
 
 import (
 	"time"
-
-	"github.com/win30221/auction-master-code/const/workers"
 )
 
 const (
@@ -37,23 +35,4 @@ type AuctionItem struct {
 	Status       uint8     `form:"status" json:"status"`
 	CreatedAt    time.Time `form:"createdAt" json:"createdAt"`
 	UpdatedAt    time.Time `form:"updatedAt" json:"updatedAt"`
-}
-
-type WatchedAuctionItem struct {
-	ID            int64            `json:"id"`
-	SellerName    string           `json:"sellerName"`
-	WatcherName   string           `json:"watcherName"`
-	ConsignorName string           `json:"consignorName"`
-	AuctionID     string           `json:"auctionID"`
-	Name          string           `json:"name"`
-	Photo         string           `json:"photo"`
-	Bidders       []workers.Bidder `json:"bidders"`
-	ReservePrice  int              `json:"reservePrice"`
-	CurrentPrice  int              `json:"currentPrice"`
-	HighestPrice  int              `json:"highestPrice"`
-	CloseAt       time.Time        `json:"closeAt"`
-	ClosedPrice   int              `json:"closedPrice"`
-	Status        uint8            `json:"status"`
-	CreatedAt     time.Time        `json:"createdAt"`
-	UpdatedAt     time.Time        `json:"updatedAt"`
 }

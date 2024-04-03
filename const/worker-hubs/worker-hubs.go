@@ -22,7 +22,7 @@ type Worker struct {
 	Type          string             `bson:"type" json:"type" form:"type"`
 	URL           string             `bson:"url" json:"url" form:"url"`
 	Status        uint8              `bson:"status" json:"status" form:"status"`
-	Location      string             `bson:"location" json:"location" form:"location"`
+	Account       string             `bson:"account" json:"account" form:"account"`
 	Name          string             `bson:"name" json:"name" form:"name"`
 	Phone         string             `bson:"phone" json:"phone" form:"phone"`
 	PostalCode    string             `bson:"postalCode" json:"postalCode" form:"postalCode"`
