@@ -29,8 +29,8 @@ type Cookie struct {
 
 type GetAuctionItemInfo struct {
 	AuctionItemInfo
-	BidderInfo []BidderInfo `json:"bidderInfo"`
-	Countdown  int          `json:"countdown"`
+	Bidders   []Bidder `json:"bidders"`
+	Countdown int      `json:"countdown"`
 }
 
 type AuctionItemInfo struct {
@@ -41,7 +41,7 @@ type AuctionItemInfo struct {
 	CloseAt      time.Time `json:"closeAt"`
 }
 
-type BidderInfo struct {
+type Bidder struct {
 	Account   string    `json:"account"`
 	Rating    int       `json:"rating"`
 	BidAmount int       `json:"bidAmount"`

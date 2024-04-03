@@ -40,20 +40,20 @@ type AuctionItem struct {
 }
 
 type WatchedAuctionItem struct {
-	ID            int64                `json:"id"`
-	SellerName    string               `json:"sellerName"`
-	WatcherName   string               `json:"watcherName"`
-	ConsignorName string               `json:"consignorName"`
-	AuctionID     string               `json:"auctionID"`
-	Name          string               `json:"name"`
-	Photo         string               `json:"photo"`
-	Bidders       []workers.BidderInfo `json:"bidders"`
-	ReservePrice  int                  `json:"reservePrice"`
-	CurrentPrice  int                  `json:"currentPrice"`
-	HighestPrice  int                  `json:"highestPrice"`
-	CloseAt       time.Time            `json:"closeAt"`
-	ClosedPrice   int                  `json:"closedPrice"`
-	Status        uint8                `json:"status"`
-	CreatedAt     time.Time            `json:"createdAt"`
-	UpdatedAt     time.Time            `json:"updatedAt"`
+	ID            int64            `json:"id"`
+	SellerName    string           `json:"sellerName"`
+	WatcherName   string           `json:"watcherName"`
+	ConsignorName string           `json:"consignorName"`
+	AuctionID     string           `json:"auctionID"`
+	Name          string           `json:"name"`
+	Photo         string           `json:"photo"`
+	Bidders       []workers.Bidder `json:"bidders"`
+	ReservePrice  int              `json:"reservePrice"`
+	CurrentPrice  int              `json:"currentPrice"`
+	HighestPrice  int              `json:"highestPrice"`
+	CloseAt       time.Time        `json:"closeAt"`
+	ClosedPrice   int              `json:"closedPrice"`
+	Status        uint8            `json:"status"`
+	CreatedAt     time.Time        `json:"createdAt"`
+	UpdatedAt     time.Time        `json:"updatedAt"`
 }
