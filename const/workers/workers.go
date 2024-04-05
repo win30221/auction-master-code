@@ -1,50 +1,32 @@
 package workers
 
 import (
-	"fmt"
 	"time"
 )
 
 const (
-	// 出價後狀態
-	HighestBiddingStatus   uint8 = 1 // 系統出價最高者
-	NotHighestBiddedStatus uint8 = 2 // 系統已出價但未最高者
+	// Worker 類型
+	SellerType  = "Seller"
+	WatcherType = "Watcher"
+
+	// Worker 狀態
+	ActiveStatus                  uint8 = 1  // 啟用中
+	AwaitingSetupCompletionStatus uint8 = 2  // 等待建立完畢
+	InvalidatedStatus             uint8 = 99 // 已失效
 )
 
-var (
-	ErrLoginFailed = fmt.Errorf("Login failed")
-)
-
-type Cookie struct {
-	Name     string `json:"name"`
-	Value    string `json:"value"`
-	Path     string `json:"path,omitempty"`
-	Domain   string `json:"domain,omitempty"`
-	Expires  int64  `json:"expirationDate,omitempty"`
-	Secure   bool   `json:"secure,omitempty"`
-	HttpOnly bool   `json:"httpOnly,omitempty"`
-	SameSite string `json:"sameSite,omitempty"`
-}
-
-type GetAuctionItemInfo struct {
-	AuctionItemInfo
-	Bidders   []Bidder `json:"bidders"`
-	Countdown int      `json:"countdown"`
-}
-
-type AuctionItemInfo struct {
-	IsClosed     bool      `json:"isClosed"`
-	SellerName   string    `json:"sellerName"`
-	Name         string    `json:"name"`
-	Photo        string    `json:"photo"`
-	CurrentPrice int       `json:"currentPrice"`
-	CloseAt      time.Time `json:"closeAt"`
-}
-
-type Bidder struct {
-	Account   string    `json:"account"`
-	Rating    int       `json:"rating"`
-	BidAmount int       `json:"bidAmount"`
-	Quantity  int       `json:"quantity"`
-	LastBidAt time.Time `json:"lastBidAt"`
+type Worker struct {
+	ID            int64     `form:"id" json:"id"`
+	Type          string    `form:"type" json:"type"`
+	URL           string    `form:"url" json:"url"`
+	Status        uint8     `form:"status" json:"status"`
+	Account       string    `form:"account" json:"account"`
+	Name          string    `form:"name" json:"name"`
+	Phone         string    `form:"phone" json:"phone"`
+	PostalCode    string    `form:"postalCode" json:"postalCode"`
+	Birthday      time.Time `form:"birthday" json:"birthday"`
+	Email         string    `form:"email" json:"email"`
+	SimCardNumber string    `form:"simCardNumber" json:"simCardNumber"`
+	ActivationAt  time.Time `form:"activationAt" json:"activationAt"`
+	Remark        string    `form:"remark" json:"remark"`
 }

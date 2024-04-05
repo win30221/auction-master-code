@@ -22,8 +22,8 @@ const (
 type AuctionItem struct {
 	ID           int64     `form:"id" json:"id"`
 	ItemID       int64     `form:"itemID" json:"itemID"`
-	SellerID     string    `form:"sellerID" json:"sellerID"`
-	WatcherID    string    `form:"watcherID" json:"watcherID"`
+	SellerID     int64     `form:"sellerID" json:"sellerID"`
+	WatcherID    int64     `form:"watcherID" json:"watcherID"`
 	AuctionID    string    `form:"auctionID" json:"auctionID"`
 	Name         string    `form:"name" json:"name"`
 	Photo        string    `form:"photo" json:"photo"`
