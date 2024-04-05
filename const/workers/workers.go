@@ -2,7 +2,6 @@ package workers
 
 import (
 	"fmt"
-	"net/http"
 	"time"
 )
 
@@ -17,14 +16,14 @@ var (
 )
 
 type Cookie struct {
-	Name     string        `json:"name"`
-	Value    string        `json:"value"`
-	Path     string        `json:"path,omitempty"`
-	Domain   string        `json:"domain,omitempty"`
-	Expires  int64         `json:"expirationDate,omitempty"`
-	Secure   bool          `json:"secure,omitempty"`
-	HttpOnly bool          `json:"httpOnly,omitempty"`
-	SameSite http.SameSite `json:"sameSite,omitempty"`
+	Name     string `json:"name"`
+	Value    string `json:"value"`
+	Path     string `json:"path,omitempty"`
+	Domain   string `json:"domain,omitempty"`
+	Expires  int64  `json:"expirationDate,omitempty"`
+	Secure   bool   `json:"secure,omitempty"`
+	HttpOnly bool   `json:"httpOnly,omitempty"`
+	SameSite string `json:"sameSite,omitempty"`
 }
 
 type GetAuctionItemInfo struct {
