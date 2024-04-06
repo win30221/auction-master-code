@@ -6,8 +6,8 @@ import (
 
 const (
 	// 競標商品狀態
-	WatchingStatus     uint8 = 1 // 盯標中
-	StopWatchingStatus uint8 = 2 // 停止盯標
+	InitStatus        uint8 = 1 // 初始化
+	StopBiddingStatus uint8 = 2 // 停止出價
 
 	ClosedStatus uint8 = 11 // 結標
 
