@@ -4,7 +4,7 @@ import (
 	"time"
 )
 
-const (
+var (
 	// 競標商品狀態
 	InitStatus        uint8 = 1 // 初始化
 	StopBiddingStatus uint8 = 2 // 停止出價

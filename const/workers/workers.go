@@ -4,7 +4,7 @@ import (
 	"time"
 )
 
-const (
+var (
 	// Worker 類型
 	SellerType  = "Seller"
 	WatcherType = "Watcher"

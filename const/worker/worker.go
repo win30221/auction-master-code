@@ -5,13 +5,11 @@ import (
 	"time"
 )
 
-const (
+var (
 	// 出價後狀態
 	HighestBiddingStatus   uint8 = 1 // 系統出價最高者
 	NotHighestBiddedStatus uint8 = 2 // 系統已出價但未最高者
-)
 
-var (
 	ErrLoginFailed = fmt.Errorf("Login failed")
 )
 
