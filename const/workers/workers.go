@@ -16,17 +16,19 @@ const (
 )
 
 type Worker struct {
-	ID            int64     `form:"id" json:"id"`
-	Type          string    `form:"type" json:"type"`
-	URL           string    `form:"url" json:"url"`
-	Status        uint8     `form:"status" json:"status"`
-	Account       string    `form:"account" json:"account"`
-	Name          string    `form:"name" json:"name"`
-	Phone         string    `form:"phone" json:"phone"`
-	PostalCode    string    `form:"postalCode" json:"postalCode"`
-	Birthday      time.Time `form:"birthday" json:"birthday"`
-	Email         string    `form:"email" json:"email"`
-	SimCardNumber string    `form:"simCardNumber" json:"simCardNumber"`
-	ActivationAt  time.Time `form:"activationAt" json:"activationAt"`
-	Remark        string    `form:"remark" json:"remark"`
+	ID            *int64     `form:"id" json:"id"`
+	Type          *string    `form:"type" json:"type"`
+	URL           *string    `form:"url" json:"url"`
+	Account       *string    `form:"account" json:"account"`
+	Name          *string    `form:"name" json:"name"`
+	Phone         *string    `form:"phone" json:"phone"`
+	PostalCode    *string    `form:"postalCode" json:"postalCode"`
+	Birthday      *time.Time `form:"birthday" json:"birthday"`
+	Email         *string    `form:"email" json:"email"`
+	SimCardNumber *string    `form:"simCardNumber" json:"simCardNumber"`
+	ActivationAt  *time.Time `form:"activationAt" json:"activationAt"`
+	Remark        *string    `form:"remark" json:"remark"`
+	Status        *uint8     `form:"status" json:"status"`
+	CreatedAt     *time.Time `form:"createdAt" json:"createdAt"`
+	UpdatedAt     *time.Time `form:"updatedAt" json:"updatedAt"`
 }
