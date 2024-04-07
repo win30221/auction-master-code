@@ -1,16 +1,7 @@
 package worker
 
 import (
-	"fmt"
 	"time"
-)
-
-var (
-	// 出價後狀態
-	HighestBiddingStatus   uint8 = 1 // 系統出價最高者
-	NotHighestBiddedStatus uint8 = 2 // 系統已出價但未最高者
-
-	ErrLoginFailed = fmt.Errorf("Login failed")
 )
 
 type Cookie struct {
@@ -24,13 +15,14 @@ type Cookie struct {
 	SameSite string `json:"sameSite,omitempty"`
 }
 
-type GetAuctionItemInfo struct {
-	AuctionItemInfo
-	Bidders   []Bidder `json:"bidders"`
-	Countdown int      `json:"countdown"`
+type AuctionItemInfo struct {
+	AuctionItemBasicInfo
+	Bidders    []Bidder  `json:"bidders"`
+	Countdown  int       `json:"countdown"`
+	RetrieveAt time.Time `json:"retrieveAt"`
 }
 
-type AuctionItemInfo struct {
+type AuctionItemBasicInfo struct {
 	IsClosed     bool      `json:"isClosed"`
 	SellerName   string    `json:"sellerName"`
 	Name         string    `json:"name"`
