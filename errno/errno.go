@@ -19,7 +19,8 @@ const (
 	Workers = "1300"
 
 	// 1400 worker
-	Worker = "1400"
+	Worker            = "1400"
+	WorkerNotLoggedIn = "1401"
 
 	// -------------------- 90xx ~ 99xx 外部服務 --------------------
 
