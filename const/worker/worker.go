@@ -4,6 +4,12 @@ import (
 	"time"
 )
 
+var (
+	// 競標商品狀態
+	YhaooAuctionHighestBidded      uint8 = 1 // 系統出價最高者
+	YhaooAuctionJPNotHighestBidded uint8 = 2 // 系統已出價但未最高者
+)
+
 type Cookie struct {
 	Name     string `json:"name"`
 	Value    string `json:"value"`
