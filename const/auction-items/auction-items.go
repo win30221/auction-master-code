@@ -8,6 +8,8 @@ var (
 	// 競標商品狀態
 	InitStatus        uint8 = 1 // 初始化
 	StopBiddingStatus uint8 = 2 // 停止出價
+	HighestBidded     uint8 = 3 // 系統出價最高者
+	NotHighestBidded  uint8 = 4 // 系統已出價但未最高者
 
 	ClosedStatus uint8 = 11 // 結標
 
@@ -18,7 +20,7 @@ var (
 
 // 競標商品 schema
 type AuctionItem struct {
-	ID           *int64     `form:"id" json:"id"`
+	ID           *int64     `json:"id"`
 	ItemID       *int64     `form:"itemID" json:"itemID"`
 	SellerID     *int64     `form:"sellerID" json:"sellerID"`
 	WatcherID    *int64     `form:"watcherID" json:"watcherID"`
