@@ -36,3 +36,8 @@ type AuctionItem struct {
 	CreatedAt    *time.Time `form:"createdAt" json:"createdAt"`
 	UpdatedAt    *time.Time `form:"updatedAt" json:"updatedAt"`
 }
+
+type GetAuctionItemsRes struct {
+	AuctionItems []AuctionItem `json:"auctionItems"`
+	Count        int           `json:"count"`
+}
