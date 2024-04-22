@@ -9,6 +9,8 @@ const (
 	AuctionMaster              = "1000"
 	WorkerIdDoesNotExist       = "1001"
 	AccountOrPasswordIncorrect = "1002"
+	TokenIncorrect             = "1003"
+	BlockedUser                = "1004"
 
 	// 1100 jobs
 	Jobs = "1100"
