@@ -11,6 +11,7 @@ const (
 	AccountOrPasswordIncorrect = "1002"
 	TokenIncorrect             = "1003"
 	BlockedUser                = "1004"
+	PermissionDenied           = "1005"
 
 	// 1100 jobs
 	Jobs = "1100"
