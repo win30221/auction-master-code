@@ -6,8 +6,9 @@ const (
 	// -------------------- 10xx ~ 89xx 內部服務 --------------------
 
 	// 1000 auction-master
-	AuctionMaster        = "1000"
-	WorkerIdDoesNotExist = "1001"
+	AuctionMaster              = "1000"
+	WorkerIdDoesNotExist       = "1001"
+	AccountOrPasswordIncorrect = "1002"
 
 	// 1100 jobs
 	Jobs = "1100"
