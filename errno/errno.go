@@ -26,6 +26,20 @@ const (
 	Worker            = "1400"
 	WorkerNotLoggedIn = "1401"
 
+	// 1500 admins
+	Admins = "1500"
+
+	// 1600 consignors
+	Consignors         = "1600"
+	ConsignorsExisted  = "1601" // 使用者已存在
+	ConsignorsNotExist = "1602" // 使用者不存在
+
+	// 1700 wallets
+	Wallets             = "1700"
+	WalletExisted       = "1701" // 錢包已存在
+	WalletNotExist      = "1702" // 錢包不存在
+	InsufficientBalance = "1703" // 餘額不足
+
 	// -------------------- 90xx ~ 99xx 外部服務 --------------------
 
 )
