@@ -16,7 +16,7 @@ var (
 )
 
 type Worker struct {
-	ID            *int64     `json:"id"`
+	ID            *uint64    `json:"id"`
 	Type          *string    `form:"type" json:"type"`
 	URL           *string    `form:"url" json:"url"`
 	Account       *string    `form:"account" json:"account"`

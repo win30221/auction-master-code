@@ -20,10 +20,10 @@ var (
 
 // 競標商品 schema
 type AuctionItem struct {
-	ID           *int64     `json:"id"`
-	ItemID       *int64     `form:"itemID" json:"itemID"`
-	SellerID     *int64     `form:"sellerID" json:"sellerID"`
-	WatcherID    *int64     `form:"watcherID" json:"watcherID"`
+	ID           *uint64    `json:"id"`
+	ItemID       *uint64    `form:"itemID" json:"itemID"`
+	SellerID     *uint64    `form:"sellerID" json:"sellerID"`
+	WatcherID    *uint64    `form:"watcherID" json:"watcherID"`
 	AuctionID    *string    `form:"auctionID" json:"auctionID"`
 	Name         *string    `form:"name" json:"name"`
 	Photo        *string    `form:"photo" json:"photo"`
