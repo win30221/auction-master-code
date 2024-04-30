@@ -18,6 +18,7 @@ type Consignor struct {
 	Nickname       *string    `form:"nickname" json:"nickname"`
 	Name           *string    `form:"name" json:"name"`
 	Identification *string    `form:"identification" json:"identification"`
+	Phone          *string    `form:"phone" json:"phone"`
 	BankCode       *string    `form:"bankCode" json:"bankCode"`
 	BankAccount    *string    `form:"bankAccount" json:"bankAccount"`
 	Status         *uint8     `form:"status" json:"status"`
