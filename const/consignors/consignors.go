@@ -20,7 +20,6 @@ type Consignor struct {
 	Identification *string    `form:"identification" json:"identification"`
 	BankCode       *string    `form:"bankCode" json:"bankCode"`
 	BankAccount    *string    `form:"bankAccount" json:"bankAccount"`
-	CommissionRate *float64   `form:"commissionRate" json:"commissionRate"`
 	Status         *uint8     `form:"status" json:"status"`
 	CreatedAt      *time.Time `json:"createdAt"`
 	UpdatedAt      *time.Time `json:"updatedAt"`
