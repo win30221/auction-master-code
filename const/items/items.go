@@ -17,18 +17,17 @@ var (
 )
 
 type Item struct {
-	ID                 *uint64    `form:"id" json:"id"`
-	ConsignorID        *uint64    `form:"consignorID" json:"consignorID"`
-	Name               *string    `form:"name" json:"name"`
-	Description        *string    `form:"description" json:"description"`
-	Weight             *int       `form:"weight" json:"weight"`
-	ShippingFeeToJapan *int       `form:"shippingFeeToJapan" json:"shippingFeeToJapan"`
-	MinEstimatedPrice  *int       `form:"minEstimatedPrice" json:"minEstimatedPrice"`
-	MaxEstimatedPrice  *int       `form:"maxEstimatedPrice" json:"maxEstimatedPrice"`
-	Cost               *int       `form:"cost" json:"cost"`
-	ReservePrice       *int       `form:"reservePrice" json:"reservePrice"`
-	IncludeUserCost    *uint8     `form:"includeUserCost" json:"includeUserCost"`
-	Status             *uint8     `form:"status" json:"status"`
-	CreatedAt          *time.Time `form:"createdAt" json:"createdAt"`
-	UpdatedAt          *time.Time `form:"updatedAt" json:"updatedAt"`
+	ID                *uint64    `form:"id" json:"id"`
+	ConsignorID       *uint64    `form:"consignorID" json:"consignorID"`
+	Type              *uint8     `form:"type" json:"type"`
+	Name              *string    `form:"name" json:"name"`
+	Description       *string    `form:"description" json:"description"`
+	Space             *uint8     `form:"space" json:"space"`
+	MinEstimatedPrice *int       `form:"minEstimatedPrice" json:"minEstimatedPrice"`
+	MaxEstimatedPrice *int       `form:"maxEstimatedPrice" json:"maxEstimatedPrice"`
+	ReservePrice      *int       `form:"reservePrice" json:"reservePrice"`
+	ExpireAt          *time.Time `form:"createdAt" json:"expireAt"`
+	Status            *uint8     `form:"status" json:"status"`
+	CreatedAt         *time.Time `form:"createdAt" json:"createdAt"`
+	UpdatedAt         *time.Time `form:"updatedAt" json:"updatedAt"`
 }
