@@ -22,7 +22,7 @@ type ItemDetails struct {
 	Type              *uint8     `json:"type"`
 	Name              *string    `json:"name"`
 	Description       *string    `json:"description"`
-	Photo             *string    `json:"photo"`
+	Photo             []string   `json:"photo"`
 	Space             *uint8     `json:"space"`
 	MinEstimatedPrice *int       `json:"minEstimatedPrice"`
 	MaxEstimatedPrice *int       `json:"maxEstimatedPrice"`
