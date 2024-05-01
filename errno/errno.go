@@ -40,6 +40,10 @@ const (
 	WalletNotExist      = "1702" // 錢包不存在
 	InsufficientBalance = "1703" // 餘額不足
 
+	// 1800 items
+	Items        = "1800"
+	ItemNotExist = "1801"
+
 	// -------------------- 90xx ~ 99xx 外部服務 --------------------
 
 )
