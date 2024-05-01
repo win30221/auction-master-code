@@ -4,10 +4,11 @@ import "time"
 
 var (
 	// 競標商品狀態
-	InitStatus            uint8 = 1 // 初始化
-	SubmitAppraisalStatus uint8 = 2 // 已提交估價
-	AppraisedStatus       uint8 = 3 // 已估價
-	CanceledStatus        uint8 = 4 // 取消
+	InitStatus             uint8 = 1 // 初始化
+	SubmitAppraisalStatus  uint8 = 2 // 已提交估價
+	AppraisalFailureStatus uint8 = 3 // 估價失敗
+	AppraisedStatus        uint8 = 4 // 已估價
+	CanceledStatus         uint8 = 5 // 取消
 
 	InWarehouseStatus           uint8 = 11 // 到倉庫(準備資料中)
 	DetailsFullyCompletedStatus uint8 = 12 // 上架資料齊全
