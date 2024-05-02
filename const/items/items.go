@@ -8,14 +8,15 @@ var (
 	SubmitAppraisalStatus  uint8 = 2 // 已提交估價
 	AppraisalFailureStatus uint8 = 3 // 估價失敗
 	AppraisedStatus        uint8 = 4 // 已估價
-	CanceledStatus         uint8 = 5 // 取消
 
-	InWarehouseStatus           uint8 = 11 // 到倉庫(準備資料中)
-	DetailsFullyCompletedStatus uint8 = 12 // 上架資料齊全
+	ConsignmentApprovedStatus uint8 = 11 // 同意託售
+	ConsignmentCanceledStatus uint8 = 12 // 取消託售
 
-	SoldStatus     uint8 = 21 // 已售出
-	ReturnedStatus uint8 = 22 // 退回
+	InWarehouseStatus           uint8 = 21 // 到倉庫(準備資料中)
+	DetailsFullyCompletedStatus uint8 = 22 // 上架資料齊全
 
+	SoldStatus     uint8 = 31 // 已售出
+	ReturnedStatus uint8 = 32 // 退回
 )
 
 type ItemDetails struct {

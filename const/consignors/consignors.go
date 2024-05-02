@@ -6,7 +6,7 @@ var (
 	// Consignor 狀態
 	EnabledStatus uint8 = 1 // 啟用中
 
-	AwaitingVerificationCompletionStatus uint8 = 11 // 身份驗證中
+	AwaitingVerificationCompletionStatus uint8 = 11 // 身份尚未驗證
 
 	DisabledStatus uint8 = 99 // 禁用中
 )
