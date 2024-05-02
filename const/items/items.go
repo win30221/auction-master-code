@@ -3,7 +3,12 @@ package items
 import "time"
 
 var (
-	// 競標商品狀態
+	// 商品類型
+	AppraisableAuctionItemType    uint8 = 1 // 可估價競標物品
+	NonAppraisableAuctionItemType uint8 = 2 // 不可估價競標物品
+	FixedPriceItemType            uint8 = 3 // 定價物品
+
+	// 商品狀態
 	InitStatus             uint8 = 1 // 初始化
 	SubmitAppraisalStatus  uint8 = 2 // 已提交估價
 	AppraisalFailureStatus uint8 = 3 // 估價失敗

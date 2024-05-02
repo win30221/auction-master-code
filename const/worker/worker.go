@@ -6,8 +6,8 @@ import (
 
 var (
 	// 競標商品狀態
-	YhaooAuctionHighestBidded    uint8 = 1 // 系統出價最高者
-	YhaooAuctionNotHighestBidded uint8 = 2 // 系統已出價但未最高者
+	YahooAuctionHighestBidded    uint8 = 1 // 系統出價最高者
+	YahooAuctionNotHighestBidded uint8 = 2 // 系統已出價但未最高者
 )
 
 type Cookie struct {
