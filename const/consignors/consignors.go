@@ -29,6 +29,7 @@ type Consignor struct {
 }
 
 type ConsignorVerification struct {
+	ID             *uint64    `json:"id"`
 	ConsignorID    *uint64    `form:"consignorID" json:"consignorID"`
 	Photo          *string    `form:"photo" json:"photo"`
 	Name           *string    `form:"name" json:"name"`
