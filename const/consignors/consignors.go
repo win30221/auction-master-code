@@ -7,6 +7,8 @@ var (
 	EnabledStatus uint8 = 1 // 啟用中
 
 	AwaitingVerificationCompletionStatus uint8 = 11 // 身份尚未驗證
+	VerificationSuccessfulStatus         uint8 = 12 // 驗證成功
+	VerificationFailedfulStatus          uint8 = 13 // 驗證失敗
 
 	DisabledStatus uint8 = 99 // 禁用中
 )
