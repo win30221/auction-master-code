@@ -60,7 +60,7 @@ type Item struct {
 type ItemPhoto struct {
 	ItemID    *uint64    `form:"itemID" json:"itemID,omitempty"`
 	Index     *uint8     `form:"index" json:"index"`
-	URL       *string    `form:"url" json:"url"`
+	Photo     *string    `form:"photo" json:"photo"`
 	CreatedAt *time.Time `form:"createdAt" json:"createdAt,omitempty"`
 	UpdatedAt *time.Time `form:"updatedAt" json:"updatedAt,omitempty"`
 }

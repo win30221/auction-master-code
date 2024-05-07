@@ -25,3 +25,16 @@ type Consignor struct {
 	CreatedAt      *time.Time `json:"createdAt"`
 	UpdatedAt      *time.Time `json:"updatedAt"`
 }
+
+type ConsignorVerification struct {
+	ConsignorID    *uint64    `form:"consignorID" json:"consignorID"`
+	Photo          *string    `form:"photo" json:"photo"`
+	Name           *string    `form:"name" json:"name"`
+	Identification *string    `form:"identification" json:"identification"`
+	Phone          *string    `form:"phone" json:"phone"`
+	BankCode       *string    `form:"bankCode" json:"bankCode"`
+	BankAccount    *string    `form:"bankAccount" json:"bankAccount"`
+	Status         *uint8     `form:"status" json:"status"`
+	CreatedAt      *time.Time `json:"createdAt"`
+	UpdatedAt      *time.Time `json:"updatedAt"`
+}
