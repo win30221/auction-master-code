@@ -30,9 +30,11 @@ const (
 	Admins = "1500"
 
 	// 1600 consignors
-	Consignors         = "1600"
-	ConsignorsExisted  = "1601" // 使用者已存在
-	ConsignorsNotExist = "1602" // 使用者不存在
+	Consignors                    = "1600"
+	ConsignorsExisted             = "1601" // 使用者已存在
+	ConsignorsNotExist            = "1602" // 使用者不存在
+	ConsignorVerificationExisted  = "1603" // 審核申請已存在
+	ConsignorVerificationNotExist = "1604" // 審核申請不存在
 
 	// 1700 wallets
 	Wallets             = "1700"
