@@ -16,3 +16,8 @@ type Admin struct {
 	CreatedAt *time.Time `json:"createdAt"`
 	UpdatedAt *time.Time `json:"updatedAt"`
 }
+
+type GetAdminsRes struct {
+	Admins []Admin `json:"admins"`
+	Count  int     `json:"count"`
+}

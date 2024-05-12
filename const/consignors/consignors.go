@@ -41,3 +41,13 @@ type ConsignorVerification struct {
 	CreatedAt      *time.Time `json:"createdAt"`
 	UpdatedAt      *time.Time `json:"updatedAt"`
 }
+
+type GetConsignorsRes struct {
+	Consignors []Consignor `json:"consignors"`
+	Count      int         `json:"count"`
+}
+
+type GetConsignorVerificationsRes struct {
+	ConsignorVerifications []ConsignorVerification `json:"consignorVerifications"`
+	Count                  int                     `json:"count"`
+}
