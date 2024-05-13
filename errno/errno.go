@@ -27,7 +27,9 @@ const (
 	WorkerNotLoggedIn = "1401"
 
 	// 1500 admins
-	Admins = "1500"
+	Admins        = "1500"
+	AdminExisted  = "1501" // 使用者已存在
+	AdminNotExist = "1502" // 使用者不存在
 
 	// 1600 consignors
 	Consignors                    = "1600"
