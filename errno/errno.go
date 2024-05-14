@@ -7,12 +7,12 @@ const (
 
 	// 1000 auction-master
 	AuctionMaster           = "1000"
-	PermissionDenied        = "1005"
-	BlockedUser             = "1004"
-	PasswordIncorrect       = "1002"
+	PermissionDenied        = "1001"
+	BlockedUser             = "1002"
 	TokenIncorrect          = "1003"
-	NameIncorrect           = "1006"
-	IdentificationIncorrect = "1007"
+	PasswordIncorrect       = "1004"
+	NameIncorrect           = "1005"
+	IdentificationIncorrect = "1006"
 
 	WorkerIdDoesNotExist = "1020"
 
