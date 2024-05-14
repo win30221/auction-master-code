@@ -6,12 +6,15 @@ const (
 	// -------------------- 10xx ~ 89xx 內部服務 --------------------
 
 	// 1000 auction-master
-	AuctionMaster              = "1000"
-	WorkerIdDoesNotExist       = "1001"
-	AccountOrPasswordIncorrect = "1002"
-	TokenIncorrect             = "1003"
-	BlockedUser                = "1004"
-	PermissionDenied           = "1005"
+	AuctionMaster           = "1000"
+	PermissionDenied        = "1005"
+	BlockedUser             = "1004"
+	PasswordIncorrect       = "1002"
+	TokenIncorrect          = "1003"
+	NameIncorrect           = "1006"
+	IdentificationIncorrect = "1007"
+
+	WorkerIdDoesNotExist = "1020"
 
 	// 1100 jobs
 	Jobs = "1100"
