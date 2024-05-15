@@ -17,8 +17,9 @@ var (
 	ConsignmentApprovedStatus uint8 = 11 // 同意託售
 	ConsignmentCanceledStatus uint8 = 12 // 取消託售
 
-	InWarehouseStatus           uint8 = 21 // 到倉庫(準備資料中)
-	DetailsFullyCompletedStatus uint8 = 22 // 上架資料齊全
+	WarehouseReceivedStatus      uint8 = 21 // 到倉庫
+	WarehouseReturnPendingStatus uint8 = 22 // 到倉庫，準備退回中
+	DetailsFullyCompletedStatus  uint8 = 23 // 上架資料齊全
 
 	SoldStatus     uint8 = 31 // 已售出
 	ReturnedStatus uint8 = 32 // 退回
