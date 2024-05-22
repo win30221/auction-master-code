@@ -51,6 +51,11 @@ const (
 	Items        = "1800"
 	ItemNotExist = "1801"
 
+	// 1900 bonuses
+	Bonuses       = "1900"
+	BonusExisted  = "1901" // 紅利已存在
+	BonusNotExist = "1902" // 紅利不存在
+
 	// -------------------- 90xx ~ 99xx 外部服務 --------------------
 
 )
