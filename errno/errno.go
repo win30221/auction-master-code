@@ -42,19 +42,20 @@ const (
 	ConsignorVerificationNotExist = "1604" // 審核申請不存在
 
 	// 1700 wallets
-	Wallets             = "1700"
-	WalletExisted       = "1701" // 錢包已存在
-	WalletNotExist      = "1702" // 錢包不存在
-	InsufficientBalance = "1703" // 餘額不足
+	Wallets                   = "1700"
+	WalletExisted             = "1701" // 錢包已存在
+	WalletNotExist            = "1702" // 錢包不存在
+	WalletInsufficientBalance = "1703" // 錢包餘額不足
 
 	// 1800 items
 	Items        = "1800"
 	ItemNotExist = "1801"
 
 	// 1900 bonuses
-	Bonuses       = "1900"
-	BonusExisted  = "1901" // 紅利已存在
-	BonusNotExist = "1902" // 紅利不存在
+	Bonuses                  = "1900"
+	BonusExisted             = "1901" // 紅利已存在
+	BonusNotExist            = "1902" // 紅利不存在
+	BonusInsufficientBalance = "1903" // 紅利餘額不足
 
 	// -------------------- 90xx ~ 99xx 外部服務 --------------------
 
