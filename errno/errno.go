@@ -15,6 +15,7 @@ const (
 	IdentificationIncorrect = "1006"
 
 	WorkerIdDoesNotExist = "1020"
+	AuctionItemExist     = "1021"
 
 	// 1100 jobs
 	Jobs = "1100"
