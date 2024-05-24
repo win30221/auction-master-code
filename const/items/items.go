@@ -21,6 +21,7 @@ var (
 	WarehouseReturnPendingStatus uint8 = 22 // 到倉庫，準備退回中
 	DetailsFullyCompletedStatus  uint8 = 23 // 上架資料齊全
 	ReadyStatus                  uint8 = 24 // 準備上架
+	BiddingStatus                uint8 = 25 // 競標中
 
 	SoldStatus     uint8 = 31 // 已售出
 	ReturnedStatus uint8 = 32 // 退回
