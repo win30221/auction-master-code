@@ -6,10 +6,10 @@ import (
 
 var (
 	// 競標商品狀態
-	InitStatus        uint8 = 1 // 初始化
-	StopBiddingStatus uint8 = 2 // 停止出價
-	HighestBidded     uint8 = 3 // 系統出價最高者
-	NotHighestBidded  uint8 = 4 // 系統已出價但未最高者
+	InitStatus             uint8 = 1 // 初始化
+	StopBiddingStatus      uint8 = 2 // 停止出價
+	HighestBiddedStatus    uint8 = 3 // 系統出價最高者
+	NotHighestBiddedStatus uint8 = 4 // 系統已出價但未最高者
 
 	ClosedStatus uint8 = 11 // 結標
 
