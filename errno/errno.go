@@ -16,6 +16,7 @@ const (
 
 	WorkerIdDoesNotExist = "1020"
 	AuctionItemExist     = "1021"
+	ItemOnBidding        = "1022"
 
 	// 1100 jobs
 	Jobs = "1100"
