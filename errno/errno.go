@@ -15,15 +15,16 @@ const (
 	IdentificationIncorrect = "1006"
 
 	WorkerIdDoesNotExist = "1020"
-	AuctionItemExist     = "1021"
-	ItemOnBidding        = "1022"
-	ItemExpired          = "1023"
+	ItemOnBidding        = "1021"
+	ItemExpired          = "1022"
 
 	// 1100 jobs
 	Jobs = "1100"
 
 	// 1200 auction-items
-	AuctionItems = "1200"
+	AuctionItems        = "1200"
+	AuctionItemExist    = "1201"
+	AuctionItemNotExist = "1202"
 
 	// 1300 workers
 	Workers = "1300"
