@@ -23,8 +23,9 @@ var (
 	ReadyStatus                  uint8 = 24 // 準備上架
 	BiddingStatus                uint8 = 25 // 競標中
 
-	SoldStatus     uint8 = 31 // 已售出
-	ReturnedStatus uint8 = 32 // 退回
+	SoldStatus               uint8 = 31 // 已售出
+	ReturnedStatus           uint8 = 32 // 退回
+	CompanyRepurchasedStatus uint8 = 33 // 被公司買回
 )
 
 type ItemDetails struct {

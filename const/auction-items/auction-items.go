@@ -13,9 +13,8 @@ var (
 
 	ClosedStatus uint8 = 11 // 結標
 
-	SoldStatus               uint8 = 21 // 售出
-	CanceledStatus           uint8 = 22 // 手動取消
-	CompanyRepurchasedStatus uint8 = 23 // 被公司買回
+	SoldStatus     uint8 = 21 // 售出
+	CanceledStatus uint8 = 22 // 手動取消
 )
 
 // 競標商品 schema
