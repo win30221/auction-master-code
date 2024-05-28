@@ -11,7 +11,8 @@ var (
 	HighestBiddedStatus    uint8 = 3 // 系統出價最高者
 	NotHighestBiddedStatus uint8 = 4 // 系統已出價但未最高者
 
-	ClosedStatus uint8 = 11 // 結標
+	ClosedStatus                   uint8 = 11 // 結標
+	AwaitingConsignorPaymentStatus uint8 = 12 // 等待寄售人付款
 
 	SoldStatus     uint8 = 21 // 售出
 	CanceledStatus uint8 = 22 // 手動取消
