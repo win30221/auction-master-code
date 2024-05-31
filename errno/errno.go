@@ -14,9 +14,10 @@ const (
 	NameIncorrect           = "1005"
 	IdentificationIncorrect = "1006"
 
-	WorkerIdDoesNotExist = "1020"
-	ItemOnBidding        = "1021"
-	ItemExpired          = "1022"
+	WorkerIdDoesNotExist    = "1020"
+	ItemOnBidding           = "1021"
+	ItemExpired             = "1022"
+	MinEstimatedPriceNotSet = "1023"
 
 	// 1100 jobs
 	Jobs = "1100"
