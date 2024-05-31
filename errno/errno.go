@@ -19,6 +19,7 @@ const (
 	ItemExpired             = "1022"
 	ItemTypeNotSet          = "1023"
 	MinEstimatedPriceNotSet = "1024"
+	AuctionItemNotClosed    = "1025"
 
 	// 1100 jobs
 	Jobs = "1100"
