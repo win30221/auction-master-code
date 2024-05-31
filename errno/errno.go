@@ -17,7 +17,8 @@ const (
 	WorkerIdDoesNotExist    = "1020"
 	ItemOnBidding           = "1021"
 	ItemExpired             = "1022"
-	MinEstimatedPriceNotSet = "1023"
+	ItemTypeNotSet          = "1023"
+	MinEstimatedPriceNotSet = "1024"
 
 	// 1100 jobs
 	Jobs = "1100"
