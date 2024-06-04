@@ -26,6 +26,7 @@ var (
 	SoldStatus               uint8 = 31 // 已售出
 	ReturnedStatus           uint8 = 32 // 退回
 	CompanyRepurchasedStatus uint8 = 33 // 被公司買回
+	CompanyReclaimedStatus   uint8 = 34 // 被公司收回
 )
 
 type ItemDetails struct {
