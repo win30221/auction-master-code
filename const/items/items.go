@@ -72,7 +72,7 @@ type ItemPhoto struct {
 	UpdatedAt *time.Time `form:"updatedAt" json:"updatedAt,omitempty"`
 }
 
-type GetItemDetailsRes struct {
+type GetItemsAndDetailsRes struct {
 	Items []ItemDetails `json:"items"`
 	Count int           `json:"count"`
 }
