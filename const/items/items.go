@@ -72,6 +72,11 @@ type ItemPhoto struct {
 	UpdatedAt *time.Time `form:"updatedAt" json:"updatedAt,omitempty"`
 }
 
+type ReorderItemPhotoReq struct {
+	OriginalSorted uint8 `form:"originalSorted" validate:"required"`
+	NewSorted      uint8 `form:"newSorted" validate:"required"`
+}
+
 type GetItemsAndDetailsRes struct {
 	Items []ItemDetails `json:"items"`
 	Count int           `json:"count"`
