@@ -66,7 +66,7 @@ type Item struct {
 
 type ItemPhoto struct {
 	ItemID    *uint64    `form:"itemID" json:"itemID,omitempty"`
-	Sorted    *uint8     `form:"sorted" json:"sorted"`
+	Sorted    *uint8     `form:"sorted" validate:"required,gt=0" json:"sorted"`
 	Photo     *string    `form:"photo" json:"photo"`
 	CreatedAt *time.Time `form:"createdAt" json:"createdAt,omitempty"`
 	UpdatedAt *time.Time `form:"updatedAt" json:"updatedAt,omitempty"`
