@@ -8,6 +8,7 @@ var (
 	// 競標商品狀態
 	YahooAuctionHighestBidded    uint8 = 1 // 系統出價最高者
 	YahooAuctionNotHighestBidded uint8 = 2 // 系統已出價但未最高者
+	YahooAuctionSetHigherBid     uint8 = 3 // 請設定一個高於目前出價的金額(申し訳ありません。入札する金額は、現在の入札額よりも高い値を設定してください。)
 )
 
 type Cookie struct {
