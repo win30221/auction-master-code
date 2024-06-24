@@ -20,7 +20,8 @@ const (
 	ItemTypeNotSet          = "1023"
 	MinEstimatedPriceNotSet = "1024"
 	AuctionItemNotClosed    = "1025"
-	ConsignorUnverified     = "1026"
+	ConsignorVerified       = "1026"
+	ConsignorUnverified     = "1027"
 
 	// 1100 jobs
 	Jobs = "1100"
