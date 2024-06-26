@@ -15,6 +15,7 @@ var (
 
 type Consignor struct {
 	ID             *uint64    `json:"id"`
+	Avatar         *string    `form:"avatar" json:"avatar"`
 	Account        *string    `form:"account" json:"account"`
 	Password       *string    `form:"password" json:"password"`
 	Nickname       *string    `form:"nickname" json:"nickname"`
