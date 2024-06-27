@@ -9,10 +9,9 @@ var (
 	FixedPriceItemType            uint8 = 3 // 定價物品
 
 	// 商品狀態
-	InitStatus             uint8 = 1 // 初始化
-	SubmitAppraisalStatus  uint8 = 2 // 已提交估價
-	AppraisalFailureStatus uint8 = 3 // 估價失敗
-	AppraisedStatus        uint8 = 4 // 已估價
+	SubmitAppraisalStatus  uint8 = 1 // 已提交估價
+	AppraisalFailureStatus uint8 = 2 // 估價失敗
+	AppraisedStatus        uint8 = 3 // 已估價
 
 	ConsignmentApprovedStatus uint8 = 11 // 同意託售
 	ConsignmentCanceledStatus uint8 = 12 // 取消託售
