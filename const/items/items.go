@@ -20,7 +20,7 @@ var (
 	WarehouseArrivalStatus         uint8 = 21 // 已到貨
 	WarehouseReturnPendingStatus   uint8 = 22 // 準備退回(等待寄售人聯絡退貨事宜)
 	WarehouseReturningStatus       uint8 = 23 // 倉庫人員退貨準備中
-	CustomerServiceConfirmedStatus uint8 = 24 // 客服確認物品可出售
+	CustomerServiceConfirmedStatus uint8 = 24 // 客服已確認
 	ReadyStatus                    uint8 = 25 // 寄售人確認可準備上架
 	BiddingStatus                  uint8 = 26 // 競標中
 
@@ -40,8 +40,8 @@ type ItemDetails struct {
 	Space             *uint8      `json:"space"`
 	MinEstimatedPrice *int        `json:"minEstimatedPrice"`
 	MaxEstimatedPrice *int        `json:"maxEstimatedPrice"`
-	SellerID          *uint64     `json:"sellerID"`
 	ReservePrice      *int        `json:"reservePrice"`
+	ShippedNumber     *string     `json:"shippedNumber"`
 	ExpireAt          *time.Time  `json:"expireAt"`
 	Status            *uint8      `json:"status"`
 	CreatedAt         *time.Time  `json:"createdAt"`
