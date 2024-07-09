@@ -57,8 +57,8 @@ type Item struct {
 	Space             *uint8     `form:"space" json:"space"`
 	MinEstimatedPrice *int       `form:"minEstimatedPrice" json:"minEstimatedPrice"`
 	MaxEstimatedPrice *int       `form:"maxEstimatedPrice" json:"maxEstimatedPrice"`
-	SellerID          *uint64    `form:"sellerID" json:"sellerID"`
 	ReservePrice      *int       `form:"reservePrice" json:"reservePrice"`
+	ShippedNumber     *string    `json:"shippedNumber"`
 	ExpireAt          *time.Time `form:"expireAt" json:"expireAt"`
 	Status            *uint8     `form:"status" json:"status"`
 	CreatedAt         *time.Time `form:"createdAt" json:"createdAt"`
