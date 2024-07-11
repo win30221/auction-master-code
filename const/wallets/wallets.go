@@ -18,3 +18,8 @@ type WalletLog struct {
 	NetDifference   *float64   `form:"netDifference" json:"netDifference"`
 	CreatedAt       *time.Time `form:"createdAt" json:"createdAt"`
 }
+
+type GetWalletLogsRes struct {
+	WalletLogs []WalletLog `json:"walletLogs"`
+	Count      int         `json:"count"`
+}

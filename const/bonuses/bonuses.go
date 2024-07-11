@@ -18,3 +18,8 @@ type BonusLog struct {
 	NetDifference   *float64   `form:"netDifference" json:"netDifference"`
 	CreatedAt       *time.Time `form:"createdAt" json:"createdAt"`
 }
+
+type GetBonusLogsRes struct {
+	BonusLogs []BonusLog `json:"bonusLogs"`
+	Count     int        `json:"count"`
+}
