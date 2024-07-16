@@ -22,6 +22,8 @@ const (
 	AuctionItemNotClosed    = "1025"
 	ConsignorVerified       = "1026"
 	ConsignorUnverified     = "1027"
+	ConsignorAccountExists  = "1028"
+	ConsignorNicknameExists = "1029"
 
 	// 1100 jobs
 	Jobs = "1100"
