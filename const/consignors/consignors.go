@@ -11,6 +11,9 @@ var (
 	VerificationFailedStatus             uint8 = 13 // 驗證失敗
 
 	DisabledStatus uint8 = 99 // 禁用中
+
+	MaleGender   uint8 = 1
+	FemaleGender uint8 = 2
 )
 
 type Consignor struct {
@@ -21,6 +24,11 @@ type Consignor struct {
 	Nickname       *string    `form:"nickname" json:"nickname"`
 	Name           *string    `form:"name" json:"name"`
 	Identification *string    `form:"identification" json:"identification"`
+	Gender         *uint8     `form:"gender" json:"gender"`
+	Birthday       *time.Time `form:"birthday" json:"birthday"`
+	City           *string    `form:"city" json:"city"`
+	District       *string    `form:"district" json:"district"`
+	StreetAddress  *string    `form:"streetAddress" json:"streetAddress"`
 	Phone          *string    `form:"phone" json:"phone"`
 	BankCode       *string    `form:"bankCode" json:"bankCode"`
 	BankAccount    *string    `form:"bankAccount" json:"bankAccount"`
@@ -35,6 +43,11 @@ type ConsignorVerification struct {
 	Photo          *string    `form:"photo" json:"photo"`
 	Name           *string    `form:"name" json:"name"`
 	Identification *string    `form:"identification" json:"identification"`
+	Gender         *uint8     `form:"gender" json:"gender"`
+	Birthday       *time.Time `form:"birthday" json:"birthday"`
+	City           *string    `form:"city" json:"city"`
+	District       *string    `form:"district" json:"district"`
+	StreetAddress  *string    `form:"streetAddress" json:"streetAddress"`
 	Phone          *string    `form:"phone" json:"phone"`
 	BankCode       *string    `form:"bankCode" json:"bankCode"`
 	BankAccount    *string    `form:"bankAccount" json:"bankAccount"`
