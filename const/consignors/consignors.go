@@ -18,40 +18,40 @@ var (
 
 type Consignor struct {
 	ID             *uint64    `json:"id"`
-	Avatar         *string    `form:"avatar" json:"avatar"`
-	Account        *string    `form:"account" json:"account"`
-	Password       *string    `form:"password" json:"password"`
-	Nickname       *string    `form:"nickname" json:"nickname"`
-	Name           *string    `form:"name" json:"name"`
-	Identification *string    `form:"identification" json:"identification"`
-	Gender         *uint8     `form:"gender" json:"gender"`
-	Birthday       *time.Time `form:"birthday" json:"birthday"`
-	City           *string    `form:"city" json:"city"`
-	District       *string    `form:"district" json:"district"`
-	StreetAddress  *string    `form:"streetAddress" json:"streetAddress"`
-	Phone          *string    `form:"phone" json:"phone"`
-	BankCode       *string    `form:"bankCode" json:"bankCode"`
-	BankAccount    *string    `form:"bankAccount" json:"bankAccount"`
-	Status         *uint8     `form:"status" json:"status"`
+	Avatar         *string    `form:"avatar" json:"avatar" sendForm:"avatar"`
+	Account        *string    `form:"account" json:"account" sendForm:"account"`
+	Password       *string    `form:"password" json:"password" sendForm:"password"`
+	Nickname       *string    `form:"nickname" json:"nickname" sendForm:"nickname"`
+	Name           *string    `form:"name" json:"name" sendForm:"name"`
+	Identification *string    `form:"identification" json:"identification" sendForm:"identification"`
+	Gender         *uint8     `form:"gender" json:"gender" sendForm:"gender"`
+	Birthday       *time.Time `form:"birthday" json:"birthday" sendForm:"birthday"`
+	City           *string    `form:"city" json:"city" sendForm:"city"`
+	District       *string    `form:"district" json:"district" sendForm:"district"`
+	StreetAddress  *string    `form:"streetAddress" json:"streetAddress" sendForm:"streetAddress"`
+	Phone          *string    `form:"phone" json:"phone" sendForm:"phone"`
+	BankCode       *string    `form:"bankCode" json:"bankCode" sendForm:"bankCode"`
+	BankAccount    *string    `form:"bankAccount" json:"bankAccount" sendForm:"bankAccount"`
+	Status         *uint8     `form:"status" json:"status" sendForm:"status"`
 	CreatedAt      *time.Time `json:"createdAt"`
 	UpdatedAt      *time.Time `json:"updatedAt"`
 }
 
 type ConsignorVerification struct {
 	ID             *uint64    `json:"id"`
-	ConsignorID    *uint64    `form:"consignorID" json:"consignorID"`
-	Photo          *string    `form:"photo" json:"photo"`
-	Name           *string    `form:"name" json:"name"`
-	Identification *string    `form:"identification" json:"identification"`
-	Gender         *uint8     `form:"gender" json:"gender"`
-	Birthday       *time.Time `form:"birthday" json:"birthday"`
-	City           *string    `form:"city" json:"city"`
-	District       *string    `form:"district" json:"district"`
-	StreetAddress  *string    `form:"streetAddress" json:"streetAddress"`
-	Phone          *string    `form:"phone" json:"phone"`
-	BankCode       *string    `form:"bankCode" json:"bankCode"`
-	BankAccount    *string    `form:"bankAccount" json:"bankAccount"`
-	Status         *uint8     `form:"status" json:"status"`
+	ConsignorID    *uint64    `form:"consignorID" json:"consignorID" sendForm:"consignorID"`
+	Photo          *string    `form:"photo" json:"photo" sendForm:"photo"`
+	Name           *string    `form:"name" json:"name" sendForm:"name"`
+	Identification *string    `form:"identification" json:"identification" sendForm:"identification"`
+	Gender         *uint8     `form:"gender" json:"gender" sendForm:"gender"`
+	Birthday       *time.Time `form:"birthday" json:"birthday" sendForm:"birthday"`
+	City           *string    `form:"city" json:"city" sendForm:"city"`
+	District       *string    `form:"district" json:"district" sendForm:"district"`
+	StreetAddress  *string    `form:"streetAddress" json:"streetAddress" sendForm:"streetAddress"`
+	Phone          *string    `form:"phone" json:"phone" sendForm:"phone"`
+	BankCode       *string    `form:"bankCode" json:"bankCode" sendForm:"bankCode"`
+	BankAccount    *string    `form:"bankAccount" json:"bankAccount" sendForm:"bankAccount"`
+	Status         *uint8     `form:"status" json:"status" sendForm:"status"`
 	CreatedAt      *time.Time `json:"createdAt"`
 	UpdatedAt      *time.Time `json:"updatedAt"`
 }
