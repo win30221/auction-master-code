@@ -35,28 +35,6 @@ var (
 
 )
 
-type ItemDetails struct {
-	ID                  *uint64          `json:"id"`
-	ConsignorID         *uint64          `json:"consignorID"`
-	Type                *uint8           `json:"type"`
-	Name                *string          `json:"name"`
-	Description         *string          `json:"description"`
-	Photos              []ItemPhoto      `json:"photos"`
-	PastStatuses        []ItemPastStatus `json:"pastStatuses"`
-	DirectPurchasePrice *int             `json:"directPurchasePrice"`
-	MinEstimatedPrice   *int             `json:"minEstimatedPrice"`
-	MaxEstimatedPrice   *int             `json:"maxEstimatedPrice"`
-	ReservePrice        *int             `json:"reservePrice"`
-	ExpireAt            *time.Time       `json:"expireAt"`
-	WarehouseID         *string          `json:"warehouseID"`
-	Space               *uint8           `json:"space"`
-	GrossWeight         *int             `json:"grossWeight"`
-	VolumetricWeight    *int             `json:"volumetricWeight"`
-	Status              *uint8           `json:"status"`
-	CreatedAt           *time.Time       `json:"createdAt"`
-	UpdatedAt           *time.Time       `json:"updatedAt"`
-}
-
 type Item struct {
 	ID                  *uint64    `form:"id" json:"id"`
 	ConsignorID         *uint64    `form:"consignorID" json:"consignorID"`
@@ -96,7 +74,7 @@ type ReorderItemPhotoReq struct {
 	NewSorted      uint8 `form:"newSorted" validate:"required"`
 }
 
-type GetItemsAndDetailsRes struct {
-	Items []ItemDetails `json:"items"`
-	Count int           `json:"count"`
+type GetItemsRes struct {
+	Items []Item `json:"items"`
+	Count int    `json:"count"`
 }
