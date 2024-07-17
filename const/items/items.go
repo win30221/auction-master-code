@@ -78,17 +78,17 @@ type Item struct {
 }
 
 type ItemPhoto struct {
-	ItemID    *uint64    `form:"itemID" json:"itemID,omitempty"`
+	ItemID    *uint64    `form:"itemID" validate:"required,gt=0" json:"-"`
 	Sorted    *uint8     `form:"sorted" validate:"required,gt=0" json:"sorted"`
-	Photo     *string    `form:"photo" json:"photo"`
-	CreatedAt *time.Time `form:"createdAt" json:"createdAt,omitempty"`
-	UpdatedAt *time.Time `form:"updatedAt" json:"updatedAt,omitempty"`
+	Photo     *string    `form:"photo" validate:"required" json:"photo"`
+	CreatedAt *time.Time `form:"createdAt" json:"createdAt"`
+	UpdatedAt *time.Time `form:"updatedAt" json:"updatedAt"`
 }
 
 type ItemPastStatus struct {
-	ItemID    *uint64    `form:"itemID" json:"itemID,omitempty"`
-	Status    *uint8     `form:"status" json:"status"`
-	CreatedAt *time.Time `form:"createdAt" json:"createdAt,omitempty"`
+	ItemID    *uint64    `form:"itemID" validate:"required,gt=0" json:"-"`
+	Status    *uint8     `form:"status" validate:"required,gt=0" json:"status"`
+	CreatedAt *time.Time `form:"createdAt" validate:"required" json:"createdAt"`
 }
 
 type ReorderItemPhotoReq struct {
