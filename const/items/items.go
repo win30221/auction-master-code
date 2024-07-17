@@ -56,22 +56,22 @@ type Item struct {
 }
 
 type ItemPhoto struct {
-	ItemID    *uint64    `form:"itemID" validate:"required,gt=0" json:"-"`
-	Sorted    *uint8     `form:"sorted" validate:"required,gt=0" json:"sorted"`
-	Photo     *string    `form:"photo" validate:"required" json:"photo"`
+	ItemID    *uint64    `form:"itemID" validate:"required,gt=0" json:"-" sendForm:"itemID"`
+	Sorted    *uint8     `form:"sorted" validate:"required,gt=0" json:"sorted" sendForm:"sorted"`
+	Photo     *string    `form:"photo" validate:"required" json:"photo" sendForm:"photo"`
 	CreatedAt *time.Time `form:"createdAt" json:"createdAt"`
 	UpdatedAt *time.Time `form:"updatedAt" json:"updatedAt"`
 }
 
 type ItemPastStatus struct {
-	ItemID    *uint64    `form:"itemID" validate:"required,gt=0" json:"-"`
-	Status    *uint8     `form:"status" validate:"required,gt=0" json:"status"`
-	CreatedAt *time.Time `form:"createdAt" validate:"required" json:"createdAt"`
+	ItemID    *uint64    `form:"itemID" validate:"required,gt=0" json:"-" sendForm:"itemID"`
+	Status    *uint8     `form:"status" validate:"required,gt=0" json:"status" sendForm:"status"`
+	CreatedAt *time.Time `form:"createdAt" validate:"required" json:"createdAt" sendForm:"createdAt"`
 }
 
 type ReorderItemPhotoReq struct {
-	OriginalSorted uint8 `form:"originalSorted" validate:"required"`
-	NewSorted      uint8 `form:"newSorted" validate:"required"`
+	OriginalSorted uint8 `form:"originalSorted" validate:"required" sendForm:"originalSorted"`
+	NewSorted      uint8 `form:"newSorted" validate:"required" sendForm:"newSorted"`
 }
 
 type GetItemsRes struct {
