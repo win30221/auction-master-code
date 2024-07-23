@@ -24,6 +24,7 @@ var (
 // 競標商品 schema
 type AuctionItem struct {
 	ID           *uint64    `json:"id"`
+	ConsignorID  *uint64    `form:"consignorID" json:"consignorID"`
 	ItemID       *uint64    `form:"itemID" json:"itemID"`
 	SellerID     *uint64    `form:"sellerID" json:"sellerID"`
 	WatcherID    *uint64    `form:"watcherID" json:"watcherID"`
