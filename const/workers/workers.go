@@ -32,3 +32,8 @@ type Worker struct {
 	CreatedAt     *time.Time `form:"createdAt" json:"createdAt"`
 	UpdatedAt     *time.Time `form:"updatedAt" json:"updatedAt"`
 }
+
+type GetWorkersRes struct {
+	Workers []Worker `json:"workers"`
+	Count   int      `json:"count"`
+}
