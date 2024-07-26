@@ -39,7 +39,7 @@ type Item struct {
 	ID                  *uint64    `form:"id" json:"id"`
 	ConsignorID         *uint64    `form:"consignorID" json:"consignorID" sendForm:"consignorID"`
 	Type                *uint8     `form:"type" json:"type" sendForm:"type"`                                              // 物品類型
-	IsNew               *bool      `form:"isNew" json:"isNew"`                                                            // 是否全新品
+	IsNew               *bool      `form:"isNew" json:"isNew"  sendForm:"isNew"`                                          // 是否全新品
 	Name                *string    `form:"name" json:"name" sendForm:"name"`                                              // 物品名稱
 	Description         *string    `form:"description" json:"description" sendForm:"description"`                         // 物品描述
 	DirectPurchasePrice *int       `form:"directPurchasePrice" json:"directPurchasePrice" sendForm:"directPurchasePrice"` // 直購金額
