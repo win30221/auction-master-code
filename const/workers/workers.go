@@ -17,20 +17,20 @@ var (
 
 type Worker struct {
 	ID            *uint64    `json:"id"`
-	Type          *string    `form:"type" json:"type"`
-	URL           *string    `form:"url" json:"url"`
-	Account       *string    `form:"account" json:"account"`
-	Name          *string    `form:"name" json:"name"`
-	Phone         *string    `form:"phone" json:"phone"`
-	PostalCode    *string    `form:"postalCode" json:"postalCode"`
-	Birthday      *time.Time `form:"birthday" json:"birthday"`
-	Email         *string    `form:"email" json:"email"`
-	SimCardNumber *string    `form:"simCardNumber" json:"simCardNumber"`
-	ActivationAt  *time.Time `form:"activationAt" json:"activationAt"`
-	Remark        *string    `form:"remark" json:"remark"`
-	Status        *uint8     `form:"status" json:"status"`
-	CreatedAt     *time.Time `form:"createdAt" json:"createdAt"`
-	UpdatedAt     *time.Time `form:"updatedAt" json:"updatedAt"`
+	Type          *string    `form:"type" json:"type" sendForm:"type"`
+	URL           *string    `form:"url" json:"url" sendForm:"url"`
+	Account       *string    `form:"account" json:"account" sendForm:"account"`
+	Name          *string    `form:"name" json:"name" sendForm:"name"`
+	Phone         *string    `form:"phone" json:"phone" sendForm:"phone"`
+	PostalCode    *string    `form:"postalCode" json:"postalCode" sendForm:"postalCode"`
+	Birthday      *time.Time `form:"birthday" json:"birthday" sendForm:"birthday"`
+	Email         *string    `form:"email" json:"email" sendForm:"email"`
+	SimCardNumber *string    `form:"simCardNumber" json:"simCardNumber" sendForm:"simCardNumber"`
+	ActivationAt  *time.Time `form:"activationAt" json:"activationAt" sendForm:"activationAt"`
+	Remark        *string    `form:"remark" json:"remark" sendForm:"remark"`
+	Status        *uint8     `form:"status" json:"status" sendForm:"status"`
+	CreatedAt     *time.Time `json:"createdAt"`
+	UpdatedAt     *time.Time `json:"updatedAt"`
 }
 
 type GetWorkersRes struct {
