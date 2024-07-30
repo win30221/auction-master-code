@@ -6,7 +6,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-type Shippings struct {
+type Shipping struct {
 	ID            primitive.ObjectID `json:"id" bson:"_id"`
 	Type          string             `form:"type" json:"type" bson:"type" sendForm:"type"`
 	ItemIDs       []int              `form:"itemIDs" json:"itemIDs" bson:"itemIDs" sendForm:"itemIDs"`
@@ -20,6 +20,6 @@ type Shippings struct {
 }
 
 type GetShippingsRes struct {
-	Shippings []Shippings `json:"shippings"`
-	Count     int         `json:"count"`
+	Shippings []Shipping `json:"shippings"`
+	Count     int        `json:"count"`
 }
