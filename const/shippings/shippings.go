@@ -35,5 +35,5 @@ type Shipping struct {
 
 type GetShippingsRes struct {
 	Shippings []Shipping `json:"shippings"`
-	Count     int        `json:"count"`
+	Count     int64      `json:"count"`
 }
