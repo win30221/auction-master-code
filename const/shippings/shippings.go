@@ -22,8 +22,8 @@ var (
 type Shipping struct {
 	ID                     *primitive.ObjectID `json:"id" bson:"_id"`
 	Type                   *uint8              `form:"type" json:"type" bson:"type" sendForm:"type"`
-	ItemIDs                *[]int              `form:"itemIDs" json:"itemIDs" bson:"itemIDs" sendForm:"itemIDs"`
-	AuctionItemIDs         *[]int              `form:"auctionItemIDs" json:"auctionItemIDs,omitempty" bson:"auctionItemIDs,omitempty" sendForm:"auctionItemIDs"`
+	ItemIDs                *[]uint64           `form:"itemIDs" json:"itemIDs" bson:"itemIDs" sendForm:"itemIDs"`
+	AuctionItemIDs         *[]uint64           `form:"auctionItemIDs" json:"auctionItemIDs,omitempty" bson:"auctionItemIDs,omitempty" sendForm:"auctionItemIDs"`
 	Address                *string             `form:"address" json:"address,omitempty" bson:"address,omitempty" sendForm:"address"`
 	StoreNumber            *string             `form:"storeNumber" json:"storeNumber,omitempty" bson:"storeNumber,omitempty" sendForm:"storeNumber"`
 	StoreName              *string             `form:"storeName" json:"storeName,omitempty" bson:"storeName,omitempty" sendForm:"storeName"`
