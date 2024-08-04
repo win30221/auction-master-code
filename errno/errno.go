@@ -68,6 +68,10 @@ const (
 	BonusNotExist            = "1902" // 紅利不存在
 	BonusInsufficientBalance = "1903" // 紅利餘額不足
 
+	// 2000 shippings
+	Shippings        = "2000"
+	ShippingNotExist = "2001"
+
 	// -------------------- 90xx ~ 99xx 外部服務 --------------------
 
 )
