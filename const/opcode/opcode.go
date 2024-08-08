@@ -8,13 +8,13 @@ const (
 )
 
 const (
-	WalletSoldType = "1000"
+	WalletSoldType = "Sold"
 
-	WalletPayFeeType                        = "2000"
-	WalletPaySpaceFeeType                   = "2001"
-	WalletPayAuctionItemCancellationFeeType = "2002"
+	WalletPayFeeType                        = "PayFee"
+	WalletPaySpaceFeeType                   = "PaySpaceFee"
+	WalletPayAuctionItemCancellationFeeType = "PayAuctionItemCancellationFee"
 )
 
 const (
-	BonusSoldType = "1000"
+	BonusSoldType = "Sold"
 )
