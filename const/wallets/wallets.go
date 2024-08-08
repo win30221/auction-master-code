@@ -13,7 +13,7 @@ type WalletLog struct {
 	ID              *uint64    `json:"id"`
 	ConsignorID     *uint64    `form:"consignorID" json:"consignorID"`
 	OpCode          *string    `form:"opCode" json:"opCode"`
-	Action          *string    `form:"action" json:"action"`
+	Action          *uint16    `form:"action" json:"action"`
 	PreviousBalance *float64   `form:"previousBalance" json:"previousBalance"`
 	NetDifference   *float64   `form:"netDifference" json:"netDifference"`
 	CreatedAt       *time.Time `form:"createdAt" json:"createdAt"`
