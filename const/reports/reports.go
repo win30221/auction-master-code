@@ -65,6 +65,7 @@ type Record struct {
 	ShippingCost        *int                `form:"shippingCost" json:"shippingCost,omitempty" bson:"shippingCost,omitempty" sendForm:"shippingCost"`
 	Status              *uint8              `form:"status" json:"status" sendForm:"status"`
 	CreatedAt           *time.Time          `json:"createdAt" bson:"createdAt"`
+	UpdatedAt           *time.Time          `json:"updatedAt" bson:"updatedAt"`
 }
 
 type CreateReportReq struct {
