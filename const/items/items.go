@@ -30,7 +30,7 @@ var (
 	SoldStatus                  uint8 = 31 // 已售出
 	CompanyDirectPurchaseStatus uint8 = 32 // 公司直購
 	ReturnedStatus              uint8 = 33 // 退回
-	CompanyRepurchasedStatus    uint8 = 34 // 公司買回
+	CompanyPurchasedStatus      uint8 = 34 // 公司買回
 	CompanyReclaimedStatus      uint8 = 35 // 公司沒收
 
 )

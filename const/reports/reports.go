@@ -9,7 +9,7 @@ import (
 var (
 	SoldItemType              int = 1000 // 賣出物品
 	CompanyDirectPurchaseType int = 1001 // 公司直購
-	CompanyRepurchasedType    int = 1002 // 公司買回
+	CompanyPurchasedType      int = 1002 // 公司買回
 
 	PayYahooFeeType                   int = 2000 // 支付結標日拍手續費
 	PayAuctionItemCancellationFeeType int = 2001 // 支付取消日拍手續費
@@ -24,7 +24,7 @@ type Summary struct {
 	TotalClosedPrice         int `json:"totalClosedPrice"`
 	TotalPrice               int `json:"totalPrice"`
 	TotalDirectPurchasePrice int `json:"totalDirectPurchasePrice"`
-	TotalPurchasePrice       int `json:"totalPurchasePrice"`
+	TotalPurchasedPrice      int `json:"totalPurchasedPrice"`
 	TotalYahooFee            int `json:"totalYahooFee"`
 	TotalCommission          int `json:"totalCommission"`
 	TotalBonus               int `json:"totalBonus"`
@@ -53,7 +53,7 @@ type Record struct {
 	ClosedPrice         *int                `form:"closedPrice" json:"closedPrice,omitempty" bson:"closedPrice,omitempty" sendForm:"closedPrice"`
 	Price               *int                `form:"price" json:"price,omitempty" bson:"price,omitempty" sendForm:"price"`
 	DirectPurchasePrice *int                `form:"directPurchasePrice" json:"directPurchasePrice,omitempty" bson:"directPurchasePrice,omitempty" sendForm:"directPurchasePrice"`
-	PurchasePrice       *int                `form:"purchasePrice" json:"purchasePrice,omitempty" bson:"purchasePrice,omitempty" sendForm:"purchasePrice"`
+	PurchasedPrice      *int                `form:"purchasedPrice" json:"purchasedPrice,omitempty" bson:"purchasedPrice,omitempty" sendForm:"purchasedPrice"`
 	YahooFeeRate        *float64            `form:"yahooFeeRate" json:"yahooFeeRate,omitempty" bson:"yahooFeeRate,omitempty" sendForm:"yahooFeeRate"`
 	YahooFee            *int                `form:"yahooFee" json:"yahooFee,omitempty" bson:"yahooFee,omitempty" sendForm:"yahooFee"`
 	CommissionRate      *float64            `form:"commissionRate" json:"commissionRate,omitempty" bson:"commissionRate,omitempty" sendForm:"commissionRate"`
