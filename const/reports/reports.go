@@ -16,21 +16,21 @@ var (
 	PaySpaceFeeType                   int = 2002 // 支付留倉費
 	PayShippingCostType               int = 2003 // 支付運費
 
-	UnpaidStatus uint8 = 1  // 已提交付款
+	UnpaidStatus uint8 = 1  // 未付款
 	PaidStatus   uint8 = 10 // 已付款
 )
 
 type Summary struct {
-	TotalClosedPrice         int `json:"totalClosedPrice"`
-	TotalPrice               int `json:"totalPrice"`
-	TotalDirectPurchasePrice int `json:"totalDirectPurchasePrice"`
-	TotalPurchasedPrice      int `json:"totalPurchasedPrice"`
-	TotalYahooFee            int `json:"totalYahooFee"`
-	TotalCommission          int `json:"totalCommission"`
-	TotalBonus               int `json:"totalBonus"`
-	TotalProfit              int `json:"totalProfit"`
-	TotalSpaceFee            int `json:"totalSpaceFee"`
-	TotalShippingCost        int `json:"totalShippingCost"`
+	TotalClosedPrice         int `json:"totalClosedPrice" bson:"totalClosedPrice"`
+	TotalPrice               int `json:"totalPrice" bson:"totalPrice"`
+	TotalDirectPurchasePrice int `json:"totalDirectPurchasePrice" bson:"totalDirectPurchasePrice"`
+	TotalPurchasedPrice      int `json:"totalPurchasedPrice" bson:"totalPurchasedPrice"`
+	TotalYahooFee            int `json:"totalYahooFee" bson:"totalYahooFee"`
+	TotalCommission          int `json:"totalCommission" bson:"totalCommission"`
+	TotalBonus               int `json:"totalBonus" bson:"totalBonus"`
+	TotalProfit              int `json:"totalProfit" bson:"totalProfit"`
+	TotalSpaceFee            int `json:"totalSpaceFee" bson:"totalSpaceFee"`
+	TotalShippingCost        int `json:"totalShippingCost" bson:"totalShippingCost"`
 }
 
 type Report struct {
