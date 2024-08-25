@@ -7,14 +7,17 @@ import (
 )
 
 var (
-	SoldItemType              = 1000 // 賣出物品
-	CompanyDirectPurchaseType = 1001 // 公司直購
-	CompanyRepurchasedType    = 1002 // 公司買回
+	SoldItemType              int = 1000 // 賣出物品
+	CompanyDirectPurchaseType int = 1001 // 公司直購
+	CompanyRepurchasedType    int = 1002 // 公司買回
 
-	PayYahooFeeType                   = 2000 // 支付結標日拍手續費
-	PayAuctionItemCancellationFeeType = 2001 // 支付取消日拍手續費
-	PaySpaceFeeType                   = 2002 // 支付留倉費
-	PayShippingCostType               = 2003 // 支付運費
+	PayYahooFeeType                   int = 2000 // 支付結標日拍手續費
+	PayAuctionItemCancellationFeeType int = 2001 // 支付取消日拍手續費
+	PaySpaceFeeType                   int = 2002 // 支付留倉費
+	PayShippingCostType               int = 2003 // 支付運費
+
+	UnpaidStatus uint8 = 1  // 已提交付款
+	PaidStatus   uint8 = 10 // 已付款
 )
 
 type Summary struct {
@@ -60,6 +63,7 @@ type Record struct {
 	Profit              *int                `form:"profit" json:"profit,omitempty" bson:"profit,omitempty" sendForm:"profit"`
 	SpaceFee            *int                `form:"spaceFee" json:"spaceFee,omitempty" bson:"spaceFee,omitempty" sendForm:"spaceFee"`
 	ShippingCost        *int                `form:"shippingCost" json:"shippingCost,omitempty" bson:"shippingCost,omitempty" sendForm:"shippingCost"`
+	Status              *uint8              `form:"status" json:"status" sendForm:"status"`
 	CreatedAt           *time.Time          `json:"createdAt" bson:"createdAt"`
 }
 
@@ -75,6 +79,7 @@ type GetReportsReq struct {
 type GetRecordsReq struct {
 	Type        []int     `form:"type"`
 	ConsignorID []uint64  `form:"consignorID"`
+	Status      []int     `form:"status"` // mongo 查詢沒有 uint8 類型
 	StartAt     time.Time `form:"startAt"`
 	EndAt       time.Time `form:"endAt"`
 	Limit       int       `form:"limit"`
