@@ -19,6 +19,7 @@ var (
 	UnpaidStatus          uint8 = 1  // 未付款
 	SubmitAppraisalStatus uint8 = 2  // 已提交付款
 	PaidStatus            uint8 = 10 // 已付款
+	CancelPaymentStatus   uint8 = 11 // 取消付款
 )
 
 type Summary struct {
