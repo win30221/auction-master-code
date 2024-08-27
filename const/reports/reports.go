@@ -50,7 +50,7 @@ type Record struct {
 	ConsignorNickname    *string             `form:"consignorNickname" json:"consignorNickname" bson:"consignorNickname" sendForm:"consignorNickname"`
 	OpCode               *string             `form:"opCode" json:"opCode" bson:"opCode" sendForm:"opCode"`
 	ItemID               *uint64             `form:"itemID" json:"itemID" bson:"itemID" sendForm:"itemID"`
-	AuctionID            *uint64             `form:"auctionID" json:"auctionID,omitempty" bson:"auctionID,omitempty" sendForm:"auctionID"`
+	AuctionItemID        *uint64             `form:"auctionItemID" json:"auctionItemID,omitempty" bson:"auctionItemID,omitempty" sendForm:"auctionItemID"`
 	Currency             *string             `form:"currency" json:"currency,omitempty" bson:"currency,omitempty" sendForm:"currency"`
 	ExchangeRate         *float64            `form:"exchangeRate" json:"exchangeRate,omitempty" bson:"exchangeRate,omitempty" sendForm:"exchangeRate"`
 	ClosedPrice          *int                `form:"closedPrice" json:"closedPrice,omitempty" bson:"closedPrice,omitempty" sendForm:"closedPrice"`
@@ -82,13 +82,14 @@ type GetReportsReq struct {
 }
 
 type GetRecordsReq struct {
-	Type        []int     `form:"type"`
-	ConsignorID []uint64  `form:"consignorID"`
-	Status      []int     `form:"status"` // mongo 查詢沒有 uint8 類型
-	StartAt     time.Time `form:"startAt"`
-	EndAt       time.Time `form:"endAt"`
-	Limit       int       `form:"limit"`
-	Offset      int       `form:"offset"`
+	Type          []int     `form:"type"`
+	ConsignorID   []uint64  `form:"consignorID"`
+	AuctionItemID []uint64  `form:"auctionItemID"`
+	Status        []int     `form:"status"` // mongo 查詢沒有 uint8 類型
+	StartAt       time.Time `form:"startAt"`
+	EndAt         time.Time `form:"endAt"`
+	Limit         int       `form:"limit"`
+	Offset        int       `form:"offset"`
 }
 
 type GetRecordsRes struct {
