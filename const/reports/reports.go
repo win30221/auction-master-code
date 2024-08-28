@@ -11,7 +11,7 @@ var (
 	CompanyDirectPurchaseType int = 1001 // 公司直購
 	CompanyPurchasedType      int = 1002 // 公司買回
 
-	PayYahooFeeType                   int = 2000 // 支付結標日拍手續費
+	PayYahooAuctionFeeType            int = 2000 // 支付結標日拍手續費
 	PayAuctionItemCancellationFeeType int = 2001 // 支付取消日拍手續費
 	PaySpaceFeeType                   int = 2002 // 支付留倉費
 	PayShippingCostType               int = 2003 // 支付運費
@@ -27,7 +27,7 @@ type Summary struct {
 	TotalPrice                int `json:"totalPrice" bson:"totalPrice"`
 	TotalDirectPurchasePrice  int `json:"totalDirectPurchasePrice" bson:"totalDirectPurchasePrice"`
 	TotalPurchasedPrice       int `json:"totalPurchasedPrice" bson:"totalPurchasedPrice"`
-	TotalYahooFee             int `json:"totalYahooFee" bson:"totalYahooFee"`
+	TotalYahooAuctionFee      int `json:"totalYahooAuctionFee" bson:"totalYahooAuctionFee"`
 	TotalCommission           int `json:"totalCommission" bson:"totalCommission"`
 	TotalBonus                int `json:"totalBonus" bson:"totalBonus"`
 	TotalProfit               int `json:"totalProfit" bson:"totalProfit"`
@@ -57,8 +57,8 @@ type Record struct {
 	Price                *int                `form:"price" json:"price,omitempty" bson:"price,omitempty" sendForm:"price"`
 	DirectPurchasePrice  *int                `form:"directPurchasePrice" json:"directPurchasePrice,omitempty" bson:"directPurchasePrice,omitempty" sendForm:"directPurchasePrice"`
 	PurchasedPrice       *int                `form:"purchasedPrice" json:"purchasedPrice,omitempty" bson:"purchasedPrice,omitempty" sendForm:"purchasedPrice"`
-	YahooFeeRate         *float64            `form:"yahooFeeRate" json:"yahooFeeRate,omitempty" bson:"yahooFeeRate,omitempty" sendForm:"yahooFeeRate"`
-	YahooFee             *int                `form:"yahooFee" json:"yahooFee,omitempty" bson:"yahooFee,omitempty" sendForm:"yahooFee"`
+	YahooAuctionFeeRate  *float64            `form:"yahooAuctionFeeRate" json:"yahooAuctionFeeRate,omitempty" bson:"yahooAuctionFeeRate,omitempty" sendForm:"yahooAuctionFeeRate"`
+	YahooAuctionFee      *int                `form:"yahooAuctionFee" json:"yahooAuctionFee,omitempty" bson:"yahooAuctionFee,omitempty" sendForm:"yahooAuctionFee"`
 	CommissionRate       *float64            `form:"commissionRate" json:"commissionRate,omitempty" bson:"commissionRate,omitempty" sendForm:"commissionRate"`
 	Commission           *int                `form:"commission" json:"commission,omitempty" bson:"commission,omitempty" sendForm:"commission"`
 	BonusRate            *float64            `form:"bonusRate" json:"bonusRate,omitempty" bson:"bonusRate,omitempty" sendForm:"bonusRate"`
