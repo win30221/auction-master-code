@@ -24,6 +24,7 @@ var (
 )
 
 type Summary struct {
+	TotalJpyWithdrawal        int `json:"totalJpyWithdrawal" bson:"totalJpyWithdrawal"`
 	TotalWithdrawal           int `json:"totalWithdrawal" bson:"totalWithdrawal"`
 	TotalClosedPrice          int `json:"totalClosedPrice" bson:"totalClosedPrice"`
 	TotalPrice                int `json:"totalPrice" bson:"totalPrice"`
@@ -55,6 +56,7 @@ type Record struct {
 	AuctionItemID        *uint64             `form:"auctionItemID" json:"auctionItemID,omitempty" bson:"auctionItemID,omitempty" sendForm:"auctionItemID"`
 	Currency             *string             `form:"currency" json:"currency,omitempty" bson:"currency,omitempty" sendForm:"currency"`
 	ExchangeRate         *float64            `form:"exchangeRate" json:"exchangeRate,omitempty" bson:"exchangeRate,omitempty" sendForm:"exchangeRate"`
+	JpyWithdrawal        *int                `form:"jpyWithdrawal" json:"jpyWithdrawal,omitempty" bson:"jpyWithdrawal,omitempty" sendForm:"jpyWithdrawal"`
 	Withdrawal           *int                `form:"withdrawal" json:"withdrawal,omitempty" bson:"withdrawal,omitempty" sendForm:"withdrawal"`
 	ClosedPrice          *int                `form:"closedPrice" json:"closedPrice,omitempty" bson:"closedPrice,omitempty" sendForm:"closedPrice"`
 	Price                *int                `form:"price" json:"price,omitempty" bson:"price,omitempty" sendForm:"price"`
