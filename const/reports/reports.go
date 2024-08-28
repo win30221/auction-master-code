@@ -67,7 +67,7 @@ type Record struct {
 	YahooCancellationFee *int                `form:"yahooCancellationFee" json:"yahooCancellationFee,omitempty" bson:"yahooCancellationFee,omitempty" sendForm:"yahooCancellationFee"`
 	SpaceFee             *int                `form:"spaceFee" json:"spaceFee,omitempty" bson:"spaceFee,omitempty" sendForm:"spaceFee"`
 	ShippingCost         *int                `form:"shippingCost" json:"shippingCost,omitempty" bson:"shippingCost,omitempty" sendForm:"shippingCost"`
-	Status               *uint8              `form:"status" json:"status" sendForm:"status"`
+	Status               *uint8              `form:"status" json:"status" bson:"status" sendForm:"status"`
 	CreatedAt            *time.Time          `json:"createdAt" bson:"createdAt"`
 	UpdatedAt            *time.Time          `json:"updatedAt" bson:"updatedAt"`
 }
