@@ -16,10 +16,10 @@ var (
 	PaySpaceFeeType                   int = 2002 // 支付留倉費
 	PayShippingCostType               int = 2003 // 支付運費
 
-	UnpaidStatus          uint8 = 1  // 未付款
-	SubmitAppraisalStatus uint8 = 2  // 已提交付款
-	PaidStatus            uint8 = 10 // 已付款
-	CancelPaymentStatus   uint8 = 11 // 取消付款
+	UnpaidStatus        uint8 = 1  // 未付款
+	SubmitPaymentStatus uint8 = 2  // 已提交付款
+	PaidStatus          uint8 = 10 // 已付款
+	CancelPaymentStatus uint8 = 11 // 取消付款
 )
 
 type Summary struct {
