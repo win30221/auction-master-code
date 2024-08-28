@@ -10,6 +10,7 @@ var (
 	SoldItemType              int = 1000 // 賣出物品
 	CompanyDirectPurchaseType int = 1001 // 公司直購
 	CompanyPurchasedType      int = 1002 // 公司買回
+	WithdrawalType            int = 1003 // 提領
 
 	PayYahooAuctionFeeType            int = 2000 // 支付結標日拍手續費
 	PayAuctionItemCancellationFeeType int = 2001 // 支付取消日拍手續費
@@ -23,6 +24,7 @@ var (
 )
 
 type Summary struct {
+	TotalWithdrawal           int `json:"totalWithdrawal" bson:"totalWithdrawal"`
 	TotalClosedPrice          int `json:"totalClosedPrice" bson:"totalClosedPrice"`
 	TotalPrice                int `json:"totalPrice" bson:"totalPrice"`
 	TotalDirectPurchasePrice  int `json:"totalDirectPurchasePrice" bson:"totalDirectPurchasePrice"`
@@ -53,6 +55,7 @@ type Record struct {
 	AuctionItemID        *uint64             `form:"auctionItemID" json:"auctionItemID,omitempty" bson:"auctionItemID,omitempty" sendForm:"auctionItemID"`
 	Currency             *string             `form:"currency" json:"currency,omitempty" bson:"currency,omitempty" sendForm:"currency"`
 	ExchangeRate         *float64            `form:"exchangeRate" json:"exchangeRate,omitempty" bson:"exchangeRate,omitempty" sendForm:"exchangeRate"`
+	Withdrawal           *int                `form:"withdrawal" json:"withdrawal,omitempty" bson:"withdrawal,omitempty" sendForm:"withdrawal"`
 	ClosedPrice          *int                `form:"closedPrice" json:"closedPrice,omitempty" bson:"closedPrice,omitempty" sendForm:"closedPrice"`
 	Price                *int                `form:"price" json:"price,omitempty" bson:"price,omitempty" sendForm:"price"`
 	DirectPurchasePrice  *int                `form:"directPurchasePrice" json:"directPurchasePrice,omitempty" bson:"directPurchasePrice,omitempty" sendForm:"directPurchasePrice"`
