@@ -84,6 +84,8 @@ type CreateReportReq struct {
 type GetReportsReq struct {
 	StartAt time.Time `form:"startAt"`
 	EndAt   time.Time `form:"endAt"`
+	Sort    []string  `form:"sort"`
+	Order   []string  `form:"order"`
 }
 
 type GetRecordsReq struct {
@@ -93,6 +95,8 @@ type GetRecordsReq struct {
 	Status        []int     `form:"status"` // mongo 查詢沒有 uint8 類型
 	StartAt       time.Time `form:"startAt"`
 	EndAt         time.Time `form:"endAt"`
+	Sort          []string  `form:"sort"`
+	Order         []string  `form:"order"`
 	Limit         int       `form:"limit"`
 	Offset        int       `form:"offset"`
 }
