@@ -97,16 +97,16 @@ type GetReportsReq struct {
 }
 
 type GetRecordsReq struct {
-	ConsignorID   uint64    `form:"consignorID"` // 如果改成多個，做快取會有刪不到的風險
-	Type          []int     `form:"type"`
-	AuctionItemID []uint64  `form:"auctionItemID"`
-	Status        []int     `form:"status"` // mongo 查詢沒有 uint8 類型
-	StartAt       time.Time `form:"startAt"`
-	EndAt         time.Time `form:"endAt"`
-	Sort          []string  `form:"sort"`
-	Order         []string  `form:"order"`
-	Limit         int64     `form:"limit"`
-	Offset        int64     `form:"offset"`
+	ConsignorID   uint64    `form:"consignorID" sendForm:"consignorID"` // 如果改成多個，做快取會有刪不到的風險
+	Type          []int     `form:"type" sendForm:"type"`
+	AuctionItemID []uint64  `form:"auctionItemID" sendForm:"auctionItemID"`
+	Status        []int     `form:"status" sendForm:"status"` // mongo 查詢沒有 uint8 類型
+	StartAt       time.Time `form:"startAt" sendForm:"startAt"`
+	EndAt         time.Time `form:"endAt" sendForm:"endAt"`
+	Sort          []string  `form:"sort" sendForm:"sort"`
+	Order         []string  `form:"order" sendForm:"order"`
+	Limit         int64     `form:"limit" sendForm:"limit"`
+	Offset        int64     `form:"offset" sendForm:"offset"`
 }
 
 type GetRecordsRes struct {
