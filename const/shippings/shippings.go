@@ -35,6 +35,14 @@ type Shipping struct {
 	UpdatedAt              *time.Time          `json:"updatedAt" bson:"updatedAt"`
 }
 
+type GetShippingsReq struct {
+	Status []int    `form:"status" sendForm:"status"` // mongo 查詢沒有 uint8 類型
+	Sort   []string `form:"sort" sendForm:"sort"`
+	Order  []string `form:"order" sendForm:"order"`
+	Limit  int64    `form:"limit" sendForm:"limit"`
+	Offset int64    `form:"offset" sendForm:"offset"`
+}
+
 type GetShippingsRes struct {
 	Shippings []Shipping `json:"shippings"`
 	Count     int64      `json:"count"`
