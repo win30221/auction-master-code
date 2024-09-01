@@ -90,10 +90,10 @@ type CreateReportReq struct {
 }
 
 type GetReportsReq struct {
-	StartAt time.Time `form:"startAt"`
-	EndAt   time.Time `form:"endAt"`
-	Sort    []string  `form:"sort"`
-	Order   []string  `form:"order"`
+	StartAt time.Time `form:"startAt" sendForm:"startAt"`
+	EndAt   time.Time `form:"endAt" sendForm:"endAt"`
+	Sort    []string  `form:"sort" sendForm:"sort"`
+	Order   []string  `form:"order" sendForm:"order"`
 }
 
 type GetRecordsReq struct {
