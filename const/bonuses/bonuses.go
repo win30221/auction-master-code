@@ -19,7 +19,18 @@ type BonusLog struct {
 	CreatedAt       *time.Time `form:"createdAt" json:"createdAt"`
 }
 
+type GetBonusLogsReq struct {
+	ConsignorID uint64    `form:"consignorID" sendForm:"consignorID"` // 如果改成多個，做快取會有刪不到的風險
+	Action      []any     `form:"action" sendForm:"action"`
+	StartAt     time.Time `form:"startAt" sendForm:"startAt"`
+	EndAt       time.Time `form:"endAt" sendForm:"endAt"`
+	Sort        []string  `form:"sort" sendForm:"sort"`
+	Order       []string  `form:"order" sendForm:"order"`
+	Limit       int64     `form:"limit" sendForm:"limit"`
+	Offset      int64     `form:"offset" sendForm:"offset"`
+}
+
 type GetBonusLogsRes struct {
 	BonusLogs []BonusLog `json:"bonusLogs"`
-	Count     int        `json:"count"`
+	Count     int64      `json:"count"`
 }
