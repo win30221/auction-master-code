@@ -41,6 +41,18 @@ type AuctionItem struct {
 	UpdatedAt    *time.Time `form:"updatedAt" json:"updatedAt"`
 }
 
+type GetAuctionItemsReq struct {
+	ConsignorID uint64    `form:"consignorID" sendForm:"consignorID"` // 如果改成多個，做快取會有刪不到的風險
+	ItemID      []any     `form:"itemID" sendForm:"itemID"`           // 用 In 查詢需要用 any 去統一製作語法
+	Status      []any     `form:"status" sendForm:"status"`           // 用 In 查詢需要用 any 去統一製作語法
+	StartAt     time.Time `form:"startAt" sendForm:"startAt"`
+	EndAt       time.Time `form:"endAt" sendForm:"endAt"`
+	Sort        []string  `form:"sort" sendForm:"sort"`
+	Order       []string  `form:"order" sendForm:"order"`
+	Limit       int64     `form:"limit" sendForm:"limit"`
+	Offset      int64     `form:"offset" sendForm:"offset"`
+}
+
 type GetAuctionItemsRes struct {
 	AuctionItems []AuctionItem `json:"auctionItems"`
 	Count        int           `json:"count"`
