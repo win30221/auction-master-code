@@ -76,7 +76,7 @@ const (
 	// 2100 reports
 	Reports        = "2100"
 	ReportNotExist = "2101"
-	RecordNotExist = "2101"
+	RecordNotExist = "2102"
 
 	// -------------------- 90xx ~ 99xx 外部服務 --------------------
 
