@@ -24,19 +24,20 @@ var (
 )
 
 type Summary struct {
-	TotalJpyWithdrawal        int `json:"totalJpyWithdrawal" bson:"totalJpyWithdrawal"`
-	TotalWithdrawal           int `json:"totalWithdrawal" bson:"totalWithdrawal"`
-	TotalClosedPrice          int `json:"totalClosedPrice" bson:"totalClosedPrice"`
-	TotalPrice                int `json:"totalPrice" bson:"totalPrice"`
-	TotalDirectPurchasePrice  int `json:"totalDirectPurchasePrice" bson:"totalDirectPurchasePrice"`
-	TotalPurchasedPrice       int `json:"totalPurchasedPrice" bson:"totalPurchasedPrice"`
-	TotalYahooAuctionFee      int `json:"totalYahooAuctionFee" bson:"totalYahooAuctionFee"`
-	TotalCommission           int `json:"totalCommission" bson:"totalCommission"`
-	TotalBonus                int `json:"totalBonus" bson:"totalBonus"`
-	TotalProfit               int `json:"totalProfit" bson:"totalProfit"`
-	TotalYahooCancellationFee int `json:"totalYahooCancellationFee"`
-	TotalSpaceFee             int `json:"totalSpaceFee" bson:"totalSpaceFee"`
-	TotalShippingCost         int `json:"totalShippingCost" bson:"totalShippingCost"`
+	TotalJpyWithdrawal         int `json:"totalJpyWithdrawal" bson:"totalJpyWithdrawal"`
+	TotalWithdrawal            int `json:"totalWithdrawal" bson:"totalWithdrawal"`
+	TotalWithdrawalTransferFee int `json:"totalWithdrawalTransferFee" bson:"totalWithdrawalTransferFee"`
+	TotalClosedPrice           int `json:"totalClosedPrice" bson:"totalClosedPrice"`
+	TotalPrice                 int `json:"totalPrice" bson:"totalPrice"`
+	TotalDirectPurchasePrice   int `json:"totalDirectPurchasePrice" bson:"totalDirectPurchasePrice"`
+	TotalPurchasedPrice        int `json:"totalPurchasedPrice" bson:"totalPurchasedPrice"`
+	TotalYahooAuctionFee       int `json:"totalYahooAuctionFee" bson:"totalYahooAuctionFee"`
+	TotalCommission            int `json:"totalCommission" bson:"totalCommission"`
+	TotalBonus                 int `json:"totalBonus" bson:"totalBonus"`
+	TotalProfit                int `json:"totalProfit" bson:"totalProfit"`
+	TotalYahooCancellationFee  int `json:"totalYahooCancellationFee"`
+	TotalSpaceFee              int `json:"totalSpaceFee" bson:"totalSpaceFee"`
+	TotalShippingCost          int `json:"totalShippingCost" bson:"totalShippingCost"`
 }
 
 type Report struct {
@@ -58,10 +59,11 @@ type Record struct {
 	ExchangeRate      *float64            `form:"exchangeRate" json:"exchangeRate,omitempty" bson:"exchangeRate,omitempty" sendForm:"exchangeRate"`
 
 	// ===提款相關===
-	JpyWithdrawal *int    `form:"jpyWithdrawal" json:"jpyWithdrawal,omitempty" bson:"jpyWithdrawal,omitempty" sendForm:"jpyWithdrawal"`
-	Withdrawal    *int    `form:"withdrawal" json:"withdrawal,omitempty" bson:"withdrawal,omitempty" sendForm:"withdrawal"`
-	BankCode      *string `form:"bankCode" json:"bankCode" bson:"bankCode,omitempty" sendForm:"bankCode"`
-	BankAccount   *string `form:"bankAccount" json:"bankAccount" bson:"bankAccount,omitempty" sendForm:"bankAccount"`
+	JpyWithdrawal         *int    `form:"jpyWithdrawal" json:"jpyWithdrawal,omitempty" bson:"jpyWithdrawal,omitempty" sendForm:"jpyWithdrawal"`
+	Withdrawal            *int    `form:"withdrawal" json:"withdrawal,omitempty" bson:"withdrawal,omitempty" sendForm:"withdrawal"`
+	WithdrawalTransferFee *int    `form:"withdrawalTransferFee" json:"withdrawalTransferFee,omitempty" bson:"withdrawalTransferFee,omitempty" sendForm:"withdrawalTransferFee"`
+	BankCode              *string `form:"bankCode" json:"bankCode" bson:"bankCode,omitempty" sendForm:"bankCode"`
+	BankAccount           *string `form:"bankAccount" json:"bankAccount" bson:"bankAccount,omitempty" sendForm:"bankAccount"`
 
 	// ===結標相關===
 	ClosedPrice         *int     `form:"closedPrice" json:"closedPrice,omitempty" bson:"closedPrice,omitempty" sendForm:"closedPrice"`
