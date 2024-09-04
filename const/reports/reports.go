@@ -24,20 +24,22 @@ var (
 )
 
 type Summary struct {
-	TotalJpyWithdrawal         int `json:"totalJpyWithdrawal" bson:"totalJpyWithdrawal"`
-	TotalWithdrawal            int `json:"totalWithdrawal" bson:"totalWithdrawal"`
-	TotalWithdrawalTransferFee int `json:"totalWithdrawalTransferFee" bson:"totalWithdrawalTransferFee"`
-	TotalClosedPrice           int `json:"totalClosedPrice" bson:"totalClosedPrice"`
-	TotalPrice                 int `json:"totalPrice" bson:"totalPrice"`
-	TotalDirectPurchasePrice   int `json:"totalDirectPurchasePrice" bson:"totalDirectPurchasePrice"`
-	TotalPurchasedPrice        int `json:"totalPurchasedPrice" bson:"totalPurchasedPrice"`
-	TotalYahooAuctionFee       int `json:"totalYahooAuctionFee" bson:"totalYahooAuctionFee"`
-	TotalCommission            int `json:"totalCommission" bson:"totalCommission"`
-	TotalBonus                 int `json:"totalBonus" bson:"totalBonus"`
-	TotalProfit                int `json:"totalProfit" bson:"totalProfit"`
-	TotalYahooCancellationFee  int `json:"totalYahooCancellationFee"`
-	TotalSpaceFee              int `json:"totalSpaceFee" bson:"totalSpaceFee"`
-	TotalShippingCost          int `json:"totalShippingCost" bson:"totalShippingCost"`
+	TotalJpyWithdrawal              int `json:"totalJpyWithdrawal" bson:"totalJpyWithdrawal"`
+	TotalWithdrawal                 int `json:"totalWithdrawal" bson:"totalWithdrawal"`
+	TotalWithdrawalTransferFee      int `json:"totalWithdrawalTransferFee" bson:"totalWithdrawalTransferFee"`
+	TotalClosedPrice                int `json:"totalClosedPrice" bson:"totalClosedPrice"`
+	TotalPrice                      int `json:"totalPrice" bson:"totalPrice"`
+	TotalDirectPurchasePrice        int `json:"totalDirectPurchasePrice" bson:"totalDirectPurchasePrice"`
+	TotalPurchasedPrice             int `json:"totalPurchasedPrice" bson:"totalPurchasedPrice"`
+	TotalYahooAuctionFee            int `json:"totalYahooAuctionFee" bson:"totalYahooAuctionFee"`
+	TotalCommission                 int `json:"totalCommission" bson:"totalCommission"`
+	TotalBonus                      int `json:"totalBonus" bson:"totalBonus"`
+	TotalProfit                     int `json:"totalProfit" bson:"totalProfit"`
+	TotalShippingCostsWithinJapan   int `json:"totalShippingCostsWithinJapan" bson:"totalShippingCostsWithinJapan"`
+	TotalInternationalShippingCosts int `json:"totalInternationalShippingCosts" bson:"totalInternationalShippingCosts"`
+	TotalYahooCancellationFee       int `json:"totalYahooCancellationFee"`
+	TotalSpaceFee                   int `json:"totalSpaceFee" bson:"totalSpaceFee"`
+	TotalShippingCost               int `json:"totalShippingCost" bson:"totalShippingCost"`
 }
 
 type Report struct {
@@ -66,17 +68,19 @@ type Record struct {
 	BankAccount           *string `form:"bankAccount" json:"bankAccount" bson:"bankAccount,omitempty" sendForm:"bankAccount"`
 
 	// ===結標相關===
-	ClosedPrice         *int     `form:"closedPrice" json:"closedPrice,omitempty" bson:"closedPrice,omitempty" sendForm:"closedPrice"`
-	Price               *int     `form:"price" json:"price,omitempty" bson:"price,omitempty" sendForm:"price"`
-	DirectPurchasePrice *int     `form:"directPurchasePrice" json:"directPurchasePrice,omitempty" bson:"directPurchasePrice,omitempty" sendForm:"directPurchasePrice"`
-	PurchasedPrice      *int     `form:"purchasedPrice" json:"purchasedPrice,omitempty" bson:"purchasedPrice,omitempty" sendForm:"purchasedPrice"`
-	YahooAuctionFeeRate *float64 `form:"yahooAuctionFeeRate" json:"yahooAuctionFeeRate,omitempty" bson:"yahooAuctionFeeRate,omitempty" sendForm:"yahooAuctionFeeRate"`
-	YahooAuctionFee     *int     `form:"yahooAuctionFee" json:"yahooAuctionFee,omitempty" bson:"yahooAuctionFee,omitempty" sendForm:"yahooAuctionFee"`
-	CommissionRate      *float64 `form:"commissionRate" json:"commissionRate,omitempty" bson:"commissionRate,omitempty" sendForm:"commissionRate"`
-	Commission          *int     `form:"commission" json:"commission,omitempty" bson:"commission,omitempty" sendForm:"commission"`
-	BonusRate           *float64 `form:"bonusRate" json:"bonusRate,omitempty" bson:"bonusRate,omitempty" sendForm:"bonusRate"`
-	Bonus               *int     `form:"bonus" json:"bonus,omitempty" bson:"bonus,omitempty" sendForm:"bonus"`
-	Profit              *int     `form:"profit" json:"profit,omitempty" bson:"profit,omitempty" sendForm:"profit"`
+	ClosedPrice                *int     `form:"closedPrice" json:"closedPrice,omitempty" bson:"closedPrice,omitempty" sendForm:"closedPrice"`
+	Price                      *int     `form:"price" json:"price,omitempty" bson:"price,omitempty" sendForm:"price"`
+	DirectPurchasePrice        *int     `form:"directPurchasePrice" json:"directPurchasePrice,omitempty" bson:"directPurchasePrice,omitempty" sendForm:"directPurchasePrice"`
+	PurchasedPrice             *int     `form:"purchasedPrice" json:"purchasedPrice,omitempty" bson:"purchasedPrice,omitempty" sendForm:"purchasedPrice"`
+	YahooAuctionFeeRate        *float64 `form:"yahooAuctionFeeRate" json:"yahooAuctionFeeRate,omitempty" bson:"yahooAuctionFeeRate,omitempty" sendForm:"yahooAuctionFeeRate"`
+	YahooAuctionFee            *int     `form:"yahooAuctionFee" json:"yahooAuctionFee,omitempty" bson:"yahooAuctionFee,omitempty" sendForm:"yahooAuctionFee"`
+	CommissionRate             *float64 `form:"commissionRate" json:"commissionRate,omitempty" bson:"commissionRate,omitempty" sendForm:"commissionRate"`
+	Commission                 *int     `form:"commission" json:"commission,omitempty" bson:"commission,omitempty" sendForm:"commission"`
+	BonusRate                  *float64 `form:"bonusRate" json:"bonusRate,omitempty" bson:"bonusRate,omitempty" sendForm:"bonusRate"`
+	Bonus                      *int     `form:"bonus" json:"bonus,omitempty" bson:"bonus,omitempty" sendForm:"bonus"`
+	Profit                     *int     `form:"profit" json:"profit,omitempty" bson:"profit,omitempty" sendForm:"profit"`
+	ShippingCostsWithinJapan   *int     `form:"shippingCostsWithinJapan" json:"shippingCostsWithinJapan,omitempty" bson:"shippingCostsWithinJapan,omitempty" sendForm:"shippingCostsWithinJapan"`
+	InternationalShippingCosts *int     `form:"internationalShippingCosts" json:"internationalShippingCosts,omitempty" bson:"internationalShippingCosts,omitempty" sendForm:"internationalShippingCosts"`
 
 	// ===未結標相關===
 	YahooCancellationFee *int       `form:"yahooCancellationFee" json:"yahooCancellationFee,omitempty" bson:"yahooCancellationFee,omitempty" sendForm:"yahooCancellationFee"`
