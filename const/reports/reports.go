@@ -17,6 +17,8 @@ var (
 	PaySpaceFeeType                   int = 2002 // 支付留倉費
 	PayShippingCostType               int = 2003 // 支付運費
 
+	InternationalShippingCostsType int = 3000 // 國際運費
+
 	UnpaidStatus        uint8 = 1  // 未付款
 	SubmitPaymentStatus uint8 = 2  // 已提交付款
 	PaidStatus          uint8 = 10 // 已付款
@@ -37,14 +39,16 @@ type Summary struct {
 	TotalProfit                     int `json:"totalProfit" bson:"totalProfit"`
 	TotalShippingCostsWithinJapan   int `json:"totalShippingCostsWithinJapan" bson:"totalShippingCostsWithinJapan"`
 	TotalInternationalShippingCosts int `json:"totalInternationalShippingCosts" bson:"totalInternationalShippingCosts"`
-	TotalYahooCancellationFee       int `json:"totalYahooCancellationFee"`
+	TotalYahooCancellationFeeJpy    int `json:"totalYahooCancellationFeeJpy" bson:"totalYahooCancellationFeeJpy"`
+	TotalYahooCancellationFee       int `json:"totalYahooCancellationFee" bson:"totalYahooCancellationFee"`
+	TotalSpaceFeeJpy                int `json:"totalSpaceFeeJpy" bson:"totalSpaceFeeJpy"`
 	TotalSpaceFee                   int `json:"totalSpaceFee" bson:"totalSpaceFee"`
 	TotalShippingCost               int `json:"totalShippingCost" bson:"totalShippingCost"`
 }
 
 type Report struct {
 	ID        *primitive.ObjectID `json:"id" bson:"_id"`
-	Reports   *map[string]Summary `json:"reports" bson:"reports"`
+	Reports   *Summary            `json:"reports" bson:"reports"`
 	ReportAt  *time.Time          `json:"reportAt" bson:"reportAt"`
 	CreatedAt *time.Time          `json:"createdAt" bson:"createdAt"`
 }
@@ -57,7 +61,6 @@ type Record struct {
 	OpCode            *string             `form:"opCode" json:"opCode" bson:"opCode" sendForm:"opCode"`
 	ItemID            *uint64             `form:"itemID" json:"itemID" bson:"itemID,omitempty" sendForm:"itemID"`
 	AuctionItemID     *uint64             `form:"auctionItemID" json:"auctionItemID,omitempty" bson:"auctionItemID,omitempty" sendForm:"auctionItemID"`
-	Currency          *string             `form:"currency" json:"currency,omitempty" bson:"currency,omitempty" sendForm:"currency"`
 	ExchangeRate      *float64            `form:"exchangeRate" json:"exchangeRate,omitempty" bson:"exchangeRate,omitempty" sendForm:"exchangeRate"`
 
 	// ===提款相關===
@@ -73,6 +76,7 @@ type Record struct {
 	DirectPurchasePrice        *int     `form:"directPurchasePrice" json:"directPurchasePrice,omitempty" bson:"directPurchasePrice,omitempty" sendForm:"directPurchasePrice"`
 	PurchasedPrice             *int     `form:"purchasedPrice" json:"purchasedPrice,omitempty" bson:"purchasedPrice,omitempty" sendForm:"purchasedPrice"`
 	YahooAuctionFeeRate        *float64 `form:"yahooAuctionFeeRate" json:"yahooAuctionFeeRate,omitempty" bson:"yahooAuctionFeeRate,omitempty" sendForm:"yahooAuctionFeeRate"`
+	YahooAuctionFeeJpy         *int     `form:"yahooAuctionFeeJpy" json:"yahooAuctionFeeJpy,omitempty" bson:"yahooAuctionFeeJpy,omitempty" sendForm:"yahooAuctionFeeJpy"`
 	YahooAuctionFee            *int     `form:"yahooAuctionFee" json:"yahooAuctionFee,omitempty" bson:"yahooAuctionFee,omitempty" sendForm:"yahooAuctionFee"`
 	CommissionRate             *float64 `form:"commissionRate" json:"commissionRate,omitempty" bson:"commissionRate,omitempty" sendForm:"commissionRate"`
 	Commission                 *int     `form:"commission" json:"commission,omitempty" bson:"commission,omitempty" sendForm:"commission"`
@@ -83,12 +87,14 @@ type Record struct {
 	InternationalShippingCosts *int     `form:"internationalShippingCosts" json:"internationalShippingCosts,omitempty" bson:"internationalShippingCosts,omitempty" sendForm:"internationalShippingCosts"`
 
 	// ===未結標相關===
-	YahooCancellationFee *int       `form:"yahooCancellationFee" json:"yahooCancellationFee,omitempty" bson:"yahooCancellationFee,omitempty" sendForm:"yahooCancellationFee"`
-	SpaceFee             *int       `form:"spaceFee" json:"spaceFee,omitempty" bson:"spaceFee,omitempty" sendForm:"spaceFee"`
-	ShippingCost         *int       `form:"shippingCost" json:"shippingCost,omitempty" bson:"shippingCost,omitempty" sendForm:"shippingCost"`
-	Status               *uint8     `form:"status" json:"status" bson:"status" sendForm:"status"`
-	CreatedAt            *time.Time `json:"createdAt" bson:"createdAt"`
-	UpdatedAt            *time.Time `json:"updatedAt" bson:"updatedAt"`
+	YahooCancellationFeeJpy *int       `form:"yahooCancellationFeeJpy" json:"yahooCancellationFeeJpy,omitempty" bson:"yahooCancellationFeeJpy,omitempty" sendForm:"yahooCancellationFeeJpy"`
+	YahooCancellationFee    *int       `form:"yahooCancellationFee" json:"yahooCancellationFee,omitempty" bson:"yahooCancellationFee,omitempty" sendForm:"yahooCancellationFee"`
+	SpaceFeeJpy             *int       `form:"spaceFeeJpy" json:"spaceFeeJpy,omitempty" bson:"spaceFeeJpy,omitempty" sendForm:"spaceFeeJpy"`
+	SpaceFee                *int       `form:"spaceFee" json:"spaceFee,omitempty" bson:"spaceFee,omitempty" sendForm:"spaceFee"`
+	ShippingCost            *int       `form:"shippingCost" json:"shippingCost,omitempty" bson:"shippingCost,omitempty" sendForm:"shippingCost"`
+	Status                  *uint8     `form:"status" json:"status" bson:"status" sendForm:"status"`
+	CreatedAt               *time.Time `json:"createdAt" bson:"createdAt"`
+	UpdatedAt               *time.Time `json:"updatedAt" bson:"updatedAt"`
 }
 
 type CreateReportReq struct {
