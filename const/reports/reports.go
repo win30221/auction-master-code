@@ -33,6 +33,7 @@ type Summary struct {
 	TotalPrice                      int `json:"totalPrice" bson:"totalPrice"`
 	TotalDirectPurchasePrice        int `json:"totalDirectPurchasePrice" bson:"totalDirectPurchasePrice"`
 	TotalPurchasedPrice             int `json:"totalPurchasedPrice" bson:"totalPurchasedPrice"`
+	TotalYahooAuctionFeeJpy         int `json:"totalYahooAuctionFeeJpy" bson:"totalYahooAuctionFeeJpy"`
 	TotalYahooAuctionFee            int `json:"totalYahooAuctionFee" bson:"totalYahooAuctionFee"`
 	TotalCommission                 int `json:"totalCommission" bson:"totalCommission"`
 	TotalBonus                      int `json:"totalBonus" bson:"totalBonus"`
