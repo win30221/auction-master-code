@@ -60,7 +60,7 @@ type Record struct {
 	ConsignorID       *uint64             `form:"consignorID" json:"consignorID" bson:"consignorID" sendForm:"consignorID"`
 	ConsignorNickname *string             `form:"consignorNickname" json:"consignorNickname" bson:"consignorNickname" sendForm:"consignorNickname"`
 	OpCode            *string             `form:"opCode" json:"opCode" bson:"opCode" sendForm:"opCode"`
-	ItemID            *uint64             `form:"itemID" json:"itemID" bson:"itemID,omitempty" sendForm:"itemID"`
+	ItemIDs           *[]uint64           `form:"itemIDs" json:"itemIDs" bson:"itemIDs,omitempty" sendForm:"itemIDs"`
 	AuctionItemID     *uint64             `form:"auctionItemID" json:"auctionItemID,omitempty" bson:"auctionItemID,omitempty" sendForm:"auctionItemID"`
 	ExchangeRate      *float64            `form:"exchangeRate" json:"exchangeRate,omitempty" bson:"exchangeRate,omitempty" sendForm:"exchangeRate"`
 

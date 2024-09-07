@@ -7,10 +7,14 @@ import (
 )
 
 var (
+	// 出貨目的類型
+	YahooDispatchActionType uint8 = 1 // 日拍出貨
+	ReturnActionType        uint8 = 2 // 退貨
+
 	// 出貨方式類型
-	AddressType     uint8 = 1 // 地址寄出
-	SevenElevenType uint8 = 2 // 7-11寄出
-	FamilyType      uint8 = 3 // 全家寄出
+	AddressShipmentType     uint8 = 1 // 地址寄出
+	SevenElevenShipmentType uint8 = 2 // 7-11寄出
+	FamilyShipmentType      uint8 = 3 // 全家寄出
 
 	// 出貨狀態
 	SubmitAppraisalStatus uint8 = 1 // 已提交出貨
@@ -20,19 +24,21 @@ var (
 )
 
 type Shipping struct {
-	ID                     *primitive.ObjectID `json:"id" bson:"_id"`
-	Type                   *uint8              `form:"type" json:"type" bson:"type" sendForm:"type"`
-	ItemIDs                *[]uint64           `form:"itemIDs" json:"itemIDs" bson:"itemIDs" sendForm:"itemIDs"`
-	AuctionItemIDs         *[]uint64           `form:"auctionItemIDs" json:"auctionItemIDs,omitempty" bson:"auctionItemIDs,omitempty" sendForm:"auctionItemIDs"`
-	Address                *string             `form:"address" json:"address,omitempty" bson:"address,omitempty" sendForm:"address"`
-	StoreNumber            *string             `form:"storeNumber" json:"storeNumber,omitempty" bson:"storeNumber,omitempty" sendForm:"storeNumber"`
-	StoreName              *string             `form:"storeName" json:"storeName,omitempty" bson:"storeName,omitempty" sendForm:"storeName"`
-	RecipientName          *string             `form:"recipientName" json:"recipientName" bson:"recipientName" sendForm:"recipientName"`
-	Phone                  *string             `form:"phone" json:"phone" bson:"phone" sendForm:"phone"`
-	ShipmentTrackingNumber *string             `form:"shipmentTrackingNumber" json:"shipmentTrackingNumber" bson:"shipmentTrackingNumber" sendForm:"shipmentTrackingNumber"`
-	Status                 *uint8              `form:"status" json:"status" bson:"status" sendForm:"status"`
-	CreatedAt              *time.Time          `json:"createdAt" bson:"createdAt"`
-	UpdatedAt              *time.Time          `json:"updatedAt" bson:"updatedAt"`
+	ID                       *primitive.ObjectID `json:"id" bson:"_id"`
+	ActionType               *uint8              `form:"actionType" json:"actionType" bson:"actionType" sendForm:"actionType"`
+	ShipmentType             *uint8              `form:"shipmentType" json:"shipmentType" bson:"shipmentType" sendForm:"shipmentType"`
+	ItemIDs                  *[]uint64           `form:"itemIDs" json:"itemIDs" bson:"itemIDs" sendForm:"itemIDs"`
+	AuctionItemIDs           *[]uint64           `form:"auctionItemIDs" json:"auctionItemIDs,omitempty" bson:"auctionItemIDs,omitempty" sendForm:"auctionItemIDs"`
+	Address                  *string             `form:"address" json:"address,omitempty" bson:"address,omitempty" sendForm:"address"`
+	StoreNumber              *string             `form:"storeNumber" json:"storeNumber,omitempty" bson:"storeNumber,omitempty" sendForm:"storeNumber"`
+	StoreName                *string             `form:"storeName" json:"storeName,omitempty" bson:"storeName,omitempty" sendForm:"storeName"`
+	RecipientName            *string             `form:"recipientName" json:"recipientName" bson:"recipientName" sendForm:"recipientName"`
+	Phone                    *string             `form:"phone" json:"phone" bson:"phone" sendForm:"phone"`
+	ShipmentTrackingNumber   *string             `form:"shipmentTrackingNumber" json:"shipmentTrackingNumber" bson:"shipmentTrackingNumber" sendForm:"shipmentTrackingNumber"`
+	ShippingCostsWithinJapan *int                `form:"shippingCostsWithinJapan" json:"shippingCostsWithinJapan,omitempty" bson:"shippingCostsWithinJapan,omitempty" sendForm:"shippingCostsWithinJapan"`
+	Status                   *uint8              `form:"status" json:"status" bson:"status" sendForm:"status"`
+	CreatedAt                *time.Time          `json:"createdAt" bson:"createdAt"`
+	UpdatedAt                *time.Time          `json:"updatedAt" bson:"updatedAt"`
 }
 
 type GetShippingsReq struct {
