@@ -17,9 +17,11 @@ var (
 	FamilyShipmentType      uint8 = 3 // 全家寄出
 
 	// 出貨狀態
-	SubmitAppraisalStatus uint8 = 1 // 已提交出貨
-	ProcessingStatus      uint8 = 2 // 理貨中
-	ShippedStatus         uint8 = 3 // 已寄出
+	AwaitingConsignorPayFeeStatus uint8 = 1  // 等待寄售人付費
+	SubmitAppraisalStatus         uint8 = 2  // 已提交出貨
+	ProcessingStatus              uint8 = 3  // 理貨中
+	ShippedStatus                 uint8 = 4  // 已寄出
+	CanceledStatus                uint8 = 99 // 取消
 
 )
 

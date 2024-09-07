@@ -15,7 +15,7 @@ var (
 	PayYahooAuctionFeeType            int = 2000 // 支付結標日拍手續費
 	PayAuctionItemCancellationFeeType int = 2001 // 支付取消日拍手續費
 	PaySpaceFeeType                   int = 2002 // 支付留倉費
-	PayShippingCostType               int = 2003 // 支付運費
+	PayReturnItemFeeType              int = 2003 // 支付退貨費用
 
 	InternationalShippingCostsType int = 3000 // 國際運費
 
@@ -62,6 +62,7 @@ type Record struct {
 	OpCode            *string             `form:"opCode" json:"opCode" bson:"opCode" sendForm:"opCode"`
 	ItemIDs           *[]uint64           `form:"itemIDs" json:"itemIDs" bson:"itemIDs,omitempty" sendForm:"itemIDs"`
 	AuctionItemID     *uint64             `form:"auctionItemID" json:"auctionItemID,omitempty" bson:"auctionItemID,omitempty" sendForm:"auctionItemID"`
+	ShippingID        *string             `form:"shippingID" json:"shippingID,omitempty" bson:"shippingID,omitempty" sendForm:"shippingID"`
 	ExchangeRate      *float64            `form:"exchangeRate" json:"exchangeRate,omitempty" bson:"exchangeRate,omitempty" sendForm:"exchangeRate"`
 
 	// ===提款相關===
