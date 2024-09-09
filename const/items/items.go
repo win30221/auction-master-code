@@ -76,6 +76,19 @@ type ReorderItemPhotoReq struct {
 	NewSorted      uint8 `form:"newSorted" validate:"required" sendForm:"newSorted"`
 }
 
+type GetItemsReq struct {
+	ConsignorID uint64    `form:"consignorID" sendForm:"consignorID"` // 如果改成多個，做快取會有刪不到的風險
+	WarehouseID string    `form:"warehouseID" sendForm:"warehouseID"`
+	ExpireAt    time.Time `form:"expireAt" sendForm:"expireAt"`
+	Status      []uint8   `form:"status" sendForm:"status"`
+	StartAt     time.Time `form:"startAt" sendForm:"startAt"`
+	EndAt       time.Time `form:"endAt" sendForm:"endAt"`
+	Sort        []string  `form:"sort" sendForm:"sort"`
+	Order       []string  `form:"order" sendForm:"order"`
+	Limit       int64     `form:"limit" sendForm:"limit"`
+	Offset      int64     `form:"offset" sendForm:"offset"`
+}
+
 type GetItemsRes struct {
 	Items []Item `json:"items"`
 	Count int    `json:"count"`

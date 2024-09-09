@@ -62,7 +62,7 @@ type Record struct {
 	OpCode            *string             `form:"opCode" json:"opCode" bson:"opCode" sendForm:"opCode"`
 	ItemIDs           *[]uint64           `form:"itemIDs" json:"itemIDs" bson:"itemIDs,omitempty" sendForm:"itemIDs"`
 	AuctionItemID     *uint64             `form:"auctionItemID" json:"auctionItemID,omitempty" bson:"auctionItemID,omitempty" sendForm:"auctionItemID"`
-	ShippingID        *string             `form:"shippingID" json:"shippingID,omitempty" bson:"shippingID,omitempty" sendForm:"shippingID"`
+	ShippingID        *string             `form:"shippingID" json:"shippingID,omitempty" bson:"shippingID,omitempty" sendForm:"shippingID"` // todo: 好像用不到了
 	ExchangeRate      *float64            `form:"exchangeRate" json:"exchangeRate,omitempty" bson:"exchangeRate,omitempty" sendForm:"exchangeRate"`
 
 	// ===提款相關===
@@ -113,6 +113,7 @@ type GetReportsReq struct {
 type GetRecordsReq struct {
 	ConsignorID   uint64    `form:"consignorID" sendForm:"consignorID"` // 如果改成多個，做快取會有刪不到的風險
 	Type          []int     `form:"type" sendForm:"type"`
+	ItemID        []uint64  `form:"itemID" sendForm:"itemID"`
 	AuctionItemID []uint64  `form:"auctionItemID" sendForm:"auctionItemID"`
 	Status        []int     `form:"status" sendForm:"status"` // mongo 查詢沒有 uint8 類型
 	StartAt       time.Time `form:"startAt" sendForm:"startAt"`
