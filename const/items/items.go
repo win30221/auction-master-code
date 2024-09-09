@@ -91,5 +91,5 @@ type GetItemsReq struct {
 
 type GetItemsRes struct {
 	Items []Item `json:"items"`
-	Count int    `json:"count"`
+	Count int64  `json:"count"`
 }
