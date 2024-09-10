@@ -25,6 +25,7 @@ const (
 	ConsignorAccountExists       = "1028"
 	ConsignorNicknameExists      = "1029"
 	ExceedCancellationBufferTime = "1030"
+	SameWarehouseId              = "1031"
 
 	// 1100 jobs
 	Jobs = "1100"
