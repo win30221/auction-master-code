@@ -53,22 +53,22 @@ type Item struct {
 	GrossWeight              *int       `form:"grossWeight" json:"grossWeight" sendForm:"grossWeight"`                                                  // 實際重量
 	VolumetricWeight         *int       `form:"volumetricWeight" json:"volumetricWeight" sendForm:"volumetricWeight"`                                   // 體積重量
 	Status                   *uint8     `form:"status" json:"status" sendForm:"status"`
-	CreatedAt                *time.Time `form:"createdAt" json:"createdAt"`
-	UpdatedAt                *time.Time `form:"updatedAt" json:"updatedAt"`
+	CreatedAt                *time.Time `json:"createdAt"`
+	UpdatedAt                *time.Time `json:"updatedAt"`
 }
 
 type ItemPhoto struct {
 	ItemID    *uint64    `form:"itemID" validate:"required,gt=0" json:"-" sendForm:"itemID"`
 	Sorted    *uint8     `form:"sorted" validate:"required,gt=0" json:"sorted" sendForm:"sorted"`
 	Photo     *string    `form:"photo" validate:"required" json:"photo" sendForm:"photo"`
-	CreatedAt *time.Time `form:"createdAt" json:"createdAt"`
-	UpdatedAt *time.Time `form:"updatedAt" json:"updatedAt"`
+	CreatedAt *time.Time `json:"createdAt"`
+	UpdatedAt *time.Time `json:"updatedAt"`
 }
 
 type ItemPastStatus struct {
 	ItemID    *uint64    `form:"itemID" validate:"required,gt=0" json:"-" sendForm:"itemID"`
 	Status    *uint8     `form:"status" validate:"required,gt=0" json:"status" sendForm:"status"`
-	CreatedAt *time.Time `form:"createdAt" validate:"required" json:"createdAt" sendForm:"createdAt"`
+	CreatedAt *time.Time `validate:"required" json:"createdAt" sendForm:"createdAt"`
 }
 
 type ReorderItemPhotoReq struct {

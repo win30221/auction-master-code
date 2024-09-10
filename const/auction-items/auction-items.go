@@ -37,8 +37,8 @@ type AuctionItem struct {
 	CloseAt      *time.Time `form:"closeAt" json:"closeAt" sendForm:"closeAt"`
 	ClosedPrice  *int       `form:"closedPrice" json:"closedPrice" sendForm:"closedPrice"`
 	Status       *uint8     `form:"status" json:"status" sendForm:"status"`
-	CreatedAt    *time.Time `form:"createdAt" json:"createdAt"`
-	UpdatedAt    *time.Time `form:"updatedAt" json:"updatedAt"`
+	CreatedAt    *time.Time `json:"createdAt"`
+	UpdatedAt    *time.Time `json:"updatedAt"`
 }
 
 type GetAuctionItemsReq struct {
