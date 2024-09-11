@@ -57,10 +57,10 @@ type Report struct {
 type Record struct {
 	ID                *primitive.ObjectID `json:"id" bson:"_id"`
 	Type              *int                `form:"type" json:"type" bson:"type" sendForm:"type"`
-	ConsignorID       *uint64             `form:"consignorID" json:"consignorID" bson:"consignorID" sendForm:"consignorID"`
-	ConsignorNickname *string             `form:"consignorNickname" json:"consignorNickname" bson:"consignorNickname" sendForm:"consignorNickname"`
 	OpCode            *string             `form:"opCode" json:"opCode" bson:"opCode" sendForm:"opCode"`
-	ItemIDs           *[]uint64           `form:"itemIDs" json:"itemIDs" bson:"itemIDs,omitempty" sendForm:"itemIDs"`
+	ConsignorID       *uint64             `form:"consignorID" json:"consignorID,omitempty" bson:"consignorID,omitempty" sendForm:"consignorID"`
+	ConsignorNickname *string             `form:"consignorNickname" json:"consignorNickname,omitempty" bson:"consignorNickname,omitempty" sendForm:"consignorNickname"`
+	ItemIDs           *[]uint64           `form:"itemIDs" json:"itemIDs,omitempty" bson:"itemIDs,omitempty" sendForm:"itemIDs"`
 	AuctionItemID     *uint64             `form:"auctionItemID" json:"auctionItemID,omitempty" bson:"auctionItemID,omitempty" sendForm:"auctionItemID"`
 	ShippingID        *string             `form:"shippingID" json:"shippingID,omitempty" bson:"shippingID,omitempty" sendForm:"shippingID"`
 	ExchangeRate      *float64            `form:"exchangeRate" json:"exchangeRate,omitempty" bson:"exchangeRate,omitempty" sendForm:"exchangeRate"`
@@ -89,14 +89,15 @@ type Record struct {
 	InternationalShippingCosts *int     `form:"internationalShippingCosts" json:"internationalShippingCosts,omitempty" bson:"internationalShippingCosts,omitempty" sendForm:"internationalShippingCosts"`
 
 	// ===未結標相關===
-	YahooCancellationFeeJpy *int       `form:"yahooCancellationFeeJpy" json:"yahooCancellationFeeJpy,omitempty" bson:"yahooCancellationFeeJpy,omitempty" sendForm:"yahooCancellationFeeJpy"`
-	YahooCancellationFee    *int       `form:"yahooCancellationFee" json:"yahooCancellationFee,omitempty" bson:"yahooCancellationFee,omitempty" sendForm:"yahooCancellationFee"`
-	SpaceFeeJpy             *int       `form:"spaceFeeJpy" json:"spaceFeeJpy,omitempty" bson:"spaceFeeJpy,omitempty" sendForm:"spaceFeeJpy"`
-	SpaceFee                *int       `form:"spaceFee" json:"spaceFee,omitempty" bson:"spaceFee,omitempty" sendForm:"spaceFee"`
-	ShippingCost            *int       `form:"shippingCost" json:"shippingCost,omitempty" bson:"shippingCost,omitempty" sendForm:"shippingCost"`
-	Status                  *uint8     `form:"status" json:"status" bson:"status" sendForm:"status"`
-	CreatedAt               *time.Time `json:"createdAt" bson:"createdAt"`
-	UpdatedAt               *time.Time `json:"updatedAt" bson:"updatedAt"`
+	YahooCancellationFeeJpy *int `form:"yahooCancellationFeeJpy" json:"yahooCancellationFeeJpy,omitempty" bson:"yahooCancellationFeeJpy,omitempty" sendForm:"yahooCancellationFeeJpy"`
+	YahooCancellationFee    *int `form:"yahooCancellationFee" json:"yahooCancellationFee,omitempty" bson:"yahooCancellationFee,omitempty" sendForm:"yahooCancellationFee"`
+	SpaceFeeJpy             *int `form:"spaceFeeJpy" json:"spaceFeeJpy,omitempty" bson:"spaceFeeJpy,omitempty" sendForm:"spaceFeeJpy"`
+	SpaceFee                *int `form:"spaceFee" json:"spaceFee,omitempty" bson:"spaceFee,omitempty" sendForm:"spaceFee"`
+	ShippingCost            *int `form:"shippingCost" json:"shippingCost,omitempty" bson:"shippingCost,omitempty" sendForm:"shippingCost"`
+
+	Status    *uint8     `form:"status" json:"status" bson:"status" sendForm:"status"`
+	CreatedAt *time.Time `json:"createdAt" bson:"createdAt"`
+	UpdatedAt *time.Time `json:"updatedAt" bson:"updatedAt"`
 }
 
 type CreateReportReq struct {
