@@ -21,7 +21,7 @@ type WalletLog struct {
 
 type GetWalletLogsReq struct {
 	ConsignorID uint64    `form:"consignorID" sendForm:"consignorID"` // 如果改成多個，做快取會有刪不到的風險
-	Action      []any     `form:"action" sendForm:"action"`
+	Action      []uint16  `form:"action" sendForm:"action"`
 	StartAt     time.Time `form:"startAt" sendForm:"startAt"`
 	EndAt       time.Time `form:"endAt" sendForm:"endAt"`
 	Sort        []string  `form:"sort" sendForm:"sort"`
