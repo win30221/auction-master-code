@@ -34,7 +34,7 @@ type Worker struct {
 }
 
 type GetWorkersReq struct {
-	Type   []uint8  `form:"type"`
+	Type   []string `form:"type"`
 	Status []uint8  `form:"status"`
 	Sort   []string `form:"sort"`
 	Order  []string `form:"order"`
