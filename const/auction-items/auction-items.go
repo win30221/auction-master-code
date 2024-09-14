@@ -24,33 +24,33 @@ var (
 // 競標商品 schema
 type AuctionItem struct {
 	ID           *uint64    `json:"id"`
-	ConsignorID  *uint64    `form:"consignorID" json:"consignorID" sendForm:"consignorID"`
-	ItemID       *uint64    `form:"itemID" json:"itemID" sendForm:"itemID"`
-	SellerID     *uint64    `form:"sellerID" json:"sellerID" sendForm:"sellerID"`
-	WatcherID    *uint64    `form:"watcherID" json:"watcherID" sendForm:"watcherID"`
-	AuctionID    *string    `form:"auctionID" json:"auctionID" sendForm:"auctionID"`
-	Name         *string    `form:"name" json:"name" sendForm:"name"`
-	Photo        *string    `form:"photo" json:"photo" sendForm:"photo"`
-	ReservePrice *int       `form:"reservePrice" json:"reservePrice" sendForm:"reservePrice"`
-	CurrentPrice *int       `form:"currentPrice" json:"currentPrice" sendForm:"currentPrice"`
-	HighestPrice *int       `form:"highestPrice" json:"highestPrice" sendForm:"highestPrice"`
-	CloseAt      *time.Time `form:"closeAt" json:"closeAt" sendForm:"closeAt"`
-	ClosedPrice  *int       `form:"closedPrice" json:"closedPrice" sendForm:"closedPrice"`
-	Status       *uint8     `form:"status" json:"status" sendForm:"status"`
+	ConsignorID  *uint64    `form:"consignorID" json:"consignorID"`
+	ItemID       *uint64    `form:"itemID" json:"itemID"`
+	SellerID     *uint64    `form:"sellerID" json:"sellerID"`
+	WatcherID    *uint64    `form:"watcherID" json:"watcherID"`
+	AuctionID    *string    `form:"auctionID" json:"auctionID"`
+	Name         *string    `form:"name" json:"name"`
+	Photo        *string    `form:"photo" json:"photo"`
+	ReservePrice *int       `form:"reservePrice" json:"reservePrice"`
+	CurrentPrice *int       `form:"currentPrice" json:"currentPrice"`
+	HighestPrice *int       `form:"highestPrice" json:"highestPrice"`
+	CloseAt      *time.Time `form:"closeAt" json:"closeAt"`
+	ClosedPrice  *int       `form:"closedPrice" json:"closedPrice"`
+	Status       *uint8     `form:"status" json:"status"`
 	CreatedAt    *time.Time `json:"createdAt"`
 	UpdatedAt    *time.Time `json:"updatedAt"`
 }
 
 type GetAuctionItemsReq struct {
-	ConsignorID uint64    `form:"consignorID" sendForm:"consignorID"` // 如果改成多個，做快取會有刪不到的風險
-	ItemID      []uint64  `form:"itemID" sendForm:"itemID"`
-	Status      []uint8   `form:"status" sendForm:"status"`
-	StartAt     time.Time `form:"startAt" sendForm:"startAt"`
-	EndAt       time.Time `form:"endAt" sendForm:"endAt"`
-	Sort        []string  `form:"sort" sendForm:"sort"`
-	Order       []string  `form:"order" sendForm:"order"`
-	Limit       int64     `form:"limit" sendForm:"limit"`
-	Offset      int64     `form:"offset" sendForm:"offset"`
+	ConsignorID uint64    `form:"consignorID"` // 如果改成多個，做快取會有刪不到的風險
+	ItemID      []uint64  `form:"itemID"`
+	Status      []uint8   `form:"status"`
+	StartAt     time.Time `form:"startAt"`
+	EndAt       time.Time `form:"endAt"`
+	Sort        []string  `form:"sort"`
+	Order       []string  `form:"order"`
+	Limit       int64     `form:"limit"`
+	Offset      int64     `form:"offset"`
 }
 
 type GetAuctionItemsRes struct {

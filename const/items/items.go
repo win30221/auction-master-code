@@ -37,56 +37,56 @@ var (
 
 type Item struct {
 	ID                       *uint64    `form:"id" json:"id"`
-	ConsignorID              *uint64    `form:"consignorID" json:"consignorID" sendForm:"consignorID"`
-	Type                     *uint8     `form:"type" json:"type" sendForm:"type"`                                                                       // 物品類型
-	IsNew                    *bool      `form:"isNew" json:"isNew"  sendForm:"isNew"`                                                                   // 是否全新品
-	Name                     *string    `form:"name" json:"name" sendForm:"name"`                                                                       // 物品名稱
-	Description              *string    `form:"description" json:"description" sendForm:"description"`                                                  // 物品描述
-	DirectPurchasePrice      *int       `form:"directPurchasePrice" json:"directPurchasePrice" sendForm:"directPurchasePrice"`                          // 直購金額
-	MinEstimatedPrice        *int       `form:"minEstimatedPrice" json:"minEstimatedPrice" sendForm:"minEstimatedPrice"`                                // 最低估價金額
-	MaxEstimatedPrice        *int       `form:"maxEstimatedPrice" json:"maxEstimatedPrice" sendForm:"maxEstimatedPrice"`                                // 最高估價金額
-	ReservePrice             *int       `form:"reservePrice" json:"reservePrice" sendForm:"reservePrice"`                                               // 期望金額(用於最後盯標)
-	ExpireAt                 *time.Time `form:"expireAt" json:"expireAt" sendForm:"expireAt"`                                                           // 過期時間
-	WarehouseID              *string    `form:"warehouseID" json:"warehouseID" sendForm:"warehouseID"`                                                  // 存放於倉庫的編號
-	Space                    *uint8     `form:"space" json:"space" sendForm:"space"`                                                                    // 物品占用空間
-	ShippingCostsWithinJapan *int       `form:"shippingCostsWithinJapan" json:"shippingCostsWithinJapan,omitempty" sendForm:"shippingCostsWithinJapan"` // 初估日本國內運費
-	GrossWeight              *int       `form:"grossWeight" json:"grossWeight" sendForm:"grossWeight"`                                                  // 實際重量
-	VolumetricWeight         *int       `form:"volumetricWeight" json:"volumetricWeight" sendForm:"volumetricWeight"`                                   // 體積重量
-	Status                   *uint8     `form:"status" json:"status" sendForm:"status"`
+	ConsignorID              *uint64    `form:"consignorID" json:"consignorID"`
+	Type                     *uint8     `form:"type" json:"type"`                                                   // 物品類型
+	IsNew                    *bool      `form:"isNew" json:"isNew" `                                                // 是否全新品
+	Name                     *string    `form:"name" json:"name"`                                                   // 物品名稱
+	Description              *string    `form:"description" json:"description"`                                     // 物品描述
+	DirectPurchasePrice      *int       `form:"directPurchasePrice" json:"directPurchasePrice"`                     // 直購金額
+	MinEstimatedPrice        *int       `form:"minEstimatedPrice" json:"minEstimatedPrice"`                         // 最低估價金額
+	MaxEstimatedPrice        *int       `form:"maxEstimatedPrice" json:"maxEstimatedPrice"`                         // 最高估價金額
+	ReservePrice             *int       `form:"reservePrice" json:"reservePrice"`                                   // 期望金額(用於最後盯標)
+	ExpireAt                 *time.Time `form:"expireAt" json:"expireAt"`                                           // 過期時間
+	WarehouseID              *string    `form:"warehouseID" json:"warehouseID"`                                     // 存放於倉庫的編號
+	Space                    *uint8     `form:"space" json:"space"`                                                 // 物品占用空間
+	ShippingCostsWithinJapan *int       `form:"shippingCostsWithinJapan" json:"shippingCostsWithinJapan,omitempty"` // 初估日本國內運費
+	GrossWeight              *int       `form:"grossWeight" json:"grossWeight"`                                     // 實際重量
+	VolumetricWeight         *int       `form:"volumetricWeight" json:"volumetricWeight"`                           // 體積重量
+	Status                   *uint8     `form:"status" json:"status"`
 	CreatedAt                *time.Time `json:"createdAt"`
 	UpdatedAt                *time.Time `json:"updatedAt"`
 }
 
 type ItemPhoto struct {
-	ItemID    *uint64    `form:"itemID" validate:"required,gt=0" json:"-" sendForm:"itemID"`
-	Sorted    *uint8     `form:"sorted" validate:"required,gt=0" json:"sorted" sendForm:"sorted"`
-	Photo     *string    `form:"photo" validate:"required" json:"photo" sendForm:"photo"`
+	ItemID    *uint64    `form:"itemID" validate:"required,gt=0" json:"-"`
+	Sorted    *uint8     `form:"sorted" validate:"required,gt=0" json:"sorted"`
+	Photo     *string    `form:"photo" validate:"required" json:"photo"`
 	CreatedAt *time.Time `json:"createdAt"`
 	UpdatedAt *time.Time `json:"updatedAt"`
 }
 
 type ItemPastStatus struct {
-	ItemID    *uint64    `form:"itemID" validate:"required,gt=0" json:"-" sendForm:"itemID"`
-	Status    *uint8     `form:"status" validate:"required,gt=0" json:"status" sendForm:"status"`
-	CreatedAt *time.Time `validate:"required" json:"createdAt" sendForm:"createdAt"`
+	ItemID    *uint64    `form:"itemID" validate:"required,gt=0" json:"-"`
+	Status    *uint8     `form:"status" validate:"required,gt=0" json:"status"`
+	CreatedAt *time.Time `validate:"required" json:"createdAt"`
 }
 
 type ReorderItemPhotoReq struct {
-	OriginalSorted uint8 `form:"originalSorted" validate:"required" sendForm:"originalSorted"`
-	NewSorted      uint8 `form:"newSorted" validate:"required" sendForm:"newSorted"`
+	OriginalSorted uint8 `form:"originalSorted" validate:"required"`
+	NewSorted      uint8 `form:"newSorted" validate:"required"`
 }
 
 type GetItemsReq struct {
-	ConsignorID uint64    `form:"consignorID" sendForm:"consignorID"` // 如果改成多個，做快取會有刪不到的風險
-	WarehouseID string    `form:"warehouseID" sendForm:"warehouseID"`
-	ExpireAt    time.Time `form:"expireAt" sendForm:"expireAt"`
-	Status      []uint8   `form:"status" sendForm:"status"`
-	StartAt     time.Time `form:"startAt" sendForm:"startAt"`
-	EndAt       time.Time `form:"endAt" sendForm:"endAt"`
-	Sort        []string  `form:"sort" sendForm:"sort"`
-	Order       []string  `form:"order" sendForm:"order"`
-	Limit       int64     `form:"limit" sendForm:"limit"`
-	Offset      int64     `form:"offset" sendForm:"offset"`
+	ConsignorID uint64    `form:"consignorID"` // 如果改成多個，做快取會有刪不到的風險
+	WarehouseID string    `form:"warehouseID"`
+	ExpireAt    time.Time `form:"expireAt"`
+	Status      []uint8   `form:"status"`
+	StartAt     time.Time `form:"startAt"`
+	EndAt       time.Time `form:"endAt"`
+	Sort        []string  `form:"sort"`
+	Order       []string  `form:"order"`
+	Limit       int64     `form:"limit"`
+	Offset      int64     `form:"offset"`
 }
 
 type GetItemsRes struct {
