@@ -33,6 +33,15 @@ type Worker struct {
 	UpdatedAt     *time.Time `json:"updatedAt"`
 }
 
+type GetWorkersReq struct {
+	Type   []uint8  `form:"type"`
+	Status []uint8  `form:"status"`
+	Sort   []string `form:"sort"`
+	Order  []string `form:"order"`
+	Limit  int64    `form:"limit"`
+	Offset int64    `form:"offset"`
+}
+
 type GetWorkersRes struct {
 	Workers []Worker `json:"workers"`
 	Count   int      `json:"count"`
