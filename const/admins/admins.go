@@ -17,6 +17,14 @@ type Admin struct {
 	UpdatedAt *time.Time `json:"updatedAt"`
 }
 
+type GetAdminsReq struct {
+	Status []uint8  `form:"status"`
+	Sort   []string `form:"sort"`
+	Order  []string `form:"order"`
+	Limit  int64    `form:"limit"`
+	Offset int64    `form:"offset"`
+}
+
 type GetAdminsRes struct {
 	Admins []Admin `json:"admins"`
 	Count  int     `json:"count"`

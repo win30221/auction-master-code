@@ -57,9 +57,27 @@ type ConsignorVerification struct {
 	UpdatedAt      *time.Time `json:"updatedAt"`
 }
 
+type GetConsignorsReq struct {
+	FuzzyNickname string   `form:"fuzzyNickname"`
+	Status        []uint8  `form:"status"`
+	Sort          []string `form:"sort"`
+	Order         []string `form:"order"`
+	Limit         int64    `form:"limit"`
+	Offset        int64    `form:"offset"`
+}
+
 type GetConsignorsRes struct {
 	Consignors []Consignor `json:"consignors"`
 	Count      int         `json:"count"`
+}
+
+type GetConsignorVerificationsReq struct {
+	ConsignorID uint64   `form:"consignorID"` // 如果改成多個，做快取會有刪不到的風險
+	Status      []uint8  `form:"status"`
+	Sort        []string `form:"sort"`
+	Order       []string `form:"order"`
+	Limit       int64    `form:"limit"`
+	Offset      int64    `form:"offset"`
 }
 
 type GetConsignorVerificationsRes struct {
