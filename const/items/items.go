@@ -68,7 +68,7 @@ type ItemPhoto struct {
 type ItemPastStatus struct {
 	ItemID    *uint64    `form:"itemID" validate:"required,gt=0" json:"-"`
 	Status    *uint8     `form:"status" validate:"required,gt=0" json:"status"`
-	CreatedAt *time.Time `validate:"required" json:"createdAt"`
+	CreatedAt *time.Time `form:"createdAt" validate:"required" json:"createdAt"`
 }
 
 type ReorderItemPhotoReq struct {
