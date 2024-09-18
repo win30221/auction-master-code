@@ -44,11 +44,13 @@ type Shipping struct {
 }
 
 type GetShippingsReq struct {
-	Status []int    `form:"status"` // mongo 查詢沒有 uint8 類型
-	Sort   []string `form:"sort"`
-	Order  []string `form:"order"`
-	Limit  int64    `form:"limit"`
-	Offset int64    `form:"offset"`
+	Status  []int     `form:"status"` // mongo 查詢沒有 uint8 類型
+	StartAt time.Time `form:"startAt"`
+	EndAt   time.Time `form:"endAt"`
+	Sort    []string  `form:"sort"`
+	Order   []string  `form:"order"`
+	Limit   int64     `form:"limit"`
+	Offset  int64     `form:"offset"`
 }
 
 type GetShippingsRes struct {
