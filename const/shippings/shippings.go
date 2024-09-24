@@ -21,6 +21,7 @@ var (
 	SubmitAppraisalStatus         uint8 = 2  // 已提交出貨
 	ProcessingStatus              uint8 = 3  // 理貨中
 	ShippedStatus                 uint8 = 4  // 已寄出
+	ClosedStatus                  uint8 = 10 // 已結束
 	CanceledStatus                uint8 = 99 // 取消
 
 )
@@ -44,13 +45,14 @@ type Shipping struct {
 }
 
 type GetShippingsReq struct {
-	Status  []int     `form:"status"` // mongo 查詢沒有 uint8 類型
-	StartAt time.Time `form:"startAt"`
-	EndAt   time.Time `form:"endAt"`
-	Sort    []string  `form:"sort"`
-	Order   []string  `form:"order"`
-	Limit   int64     `form:"limit"`
-	Offset  int64     `form:"offset"`
+	AuctionItemID []uint64  `form:"auctionItemID"`
+	Status        []int     `form:"status"` // mongo 查詢沒有 uint8 類型
+	StartAt       time.Time `form:"startAt"`
+	EndAt         time.Time `form:"endAt"`
+	Sort          []string  `form:"sort"`
+	Order         []string  `form:"order"`
+	Limit         int64     `form:"limit"`
+	Offset        int64     `form:"offset"`
 }
 
 type GetShippingsRes struct {
