@@ -69,6 +69,7 @@ type Record struct {
 	JpyWithdrawal         *int    `form:"jpyWithdrawal" json:"jpyWithdrawal,omitempty" bson:"jpyWithdrawal,omitempty"`
 	Withdrawal            *int    `form:"withdrawal" json:"withdrawal,omitempty" bson:"withdrawal,omitempty"`
 	WithdrawalTransferFee *int    `form:"withdrawalTransferFee" json:"withdrawalTransferFee,omitempty" bson:"withdrawalTransferFee,omitempty"`
+	BeneficiaryName       *string `form:"beneficiaryName" json:"beneficiaryName" bson:"beneficiaryName,omitempty"`
 	BankCode              *string `form:"bankCode" json:"bankCode" bson:"bankCode,omitempty"`
 	BankAccount           *string `form:"bankAccount" json:"bankAccount" bson:"bankAccount,omitempty"`
 
