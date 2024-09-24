@@ -39,6 +39,7 @@ type Shipping struct {
 	Phone                      *string             `form:"phone" json:"phone" bson:"phone"`
 	ShipmentTrackingNumber     *string             `form:"shipmentTrackingNumber" json:"shipmentTrackingNumber" bson:"shipmentTrackingNumber,omitempty"`
 	InternationalShippingCosts *int                `form:"internationalShippingCosts" json:"internationalShippingCosts,omitempty" bson:"internationalShippingCosts,omitempty"`
+	Remark                     *string             `form:"remark" json:"remark,omitempty" bson:"remark,omitempty"`
 	Status                     *uint8              `form:"status" json:"status" bson:"status"`
 	CreatedAt                  *time.Time          `json:"createdAt" bson:"createdAt"`
 	UpdatedAt                  *time.Time          `json:"updatedAt" bson:"updatedAt"`

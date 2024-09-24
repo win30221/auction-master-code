@@ -31,6 +31,7 @@ type Consignor struct {
 	District            *string    `form:"district" json:"district"`
 	StreetAddress       *string    `form:"streetAddress" json:"streetAddress"`
 	Phone               *string    `form:"phone" json:"phone"`
+	BeneficiaryName     *string    `form:"beneficiaryName" json:"beneficiaryName"`
 	BankCode            *string    `form:"bankCode" json:"bankCode"`
 	BankAccount         *string    `form:"bankAccount" json:"bankAccount"`
 	Status              *uint8     `form:"status" json:"status"`
@@ -39,22 +40,23 @@ type Consignor struct {
 }
 
 type ConsignorVerification struct {
-	ID             *uint64    `json:"id"`
-	ConsignorID    *uint64    `form:"consignorID" json:"consignorID"`
-	Photo          *string    `form:"photo" json:"photo"`
-	Name           *string    `form:"name" json:"name"`
-	Identification *string    `form:"identification" json:"identification"`
-	Gender         *uint8     `form:"gender" json:"gender"`
-	Birthday       *time.Time `form:"birthday" json:"birthday"`
-	City           *string    `form:"city" json:"city"`
-	District       *string    `form:"district" json:"district"`
-	StreetAddress  *string    `form:"streetAddress" json:"streetAddress"`
-	Phone          *string    `form:"phone" json:"phone"`
-	BankCode       *string    `form:"bankCode" json:"bankCode"`
-	BankAccount    *string    `form:"bankAccount" json:"bankAccount"`
-	Status         *uint8     `form:"status" json:"status"`
-	CreatedAt      *time.Time `json:"createdAt"`
-	UpdatedAt      *time.Time `json:"updatedAt"`
+	ID              *uint64    `json:"id"`
+	ConsignorID     *uint64    `form:"consignorID" json:"consignorID"`
+	Photo           *string    `form:"photo" json:"photo"`
+	Name            *string    `form:"name" json:"name"`
+	Identification  *string    `form:"identification" json:"identification"`
+	Gender          *uint8     `form:"gender" json:"gender"`
+	Birthday        *time.Time `form:"birthday" json:"birthday"`
+	City            *string    `form:"city" json:"city"`
+	District        *string    `form:"district" json:"district"`
+	StreetAddress   *string    `form:"streetAddress" json:"streetAddress"`
+	Phone           *string    `form:"phone" json:"phone"`
+	BeneficiaryName *string    `form:"beneficiaryName" json:"beneficiaryName"`
+	BankCode        *string    `form:"bankCode" json:"bankCode"`
+	BankAccount     *string    `form:"bankAccount" json:"bankAccount"`
+	Status          *uint8     `form:"status" json:"status"`
+	CreatedAt       *time.Time `json:"createdAt"`
+	UpdatedAt       *time.Time `json:"updatedAt"`
 }
 
 type GetConsignorsReq struct {
