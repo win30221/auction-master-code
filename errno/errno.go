@@ -26,6 +26,7 @@ const (
 	ConsignorNicknameExists      = "1029"
 	ExceedCancellationBufferTime = "1030"
 	SameWarehouseId              = "1031"
+	InvalidAccountFormat         = "1032"
 
 	// 1100 jobs
 	Jobs = "1100"
