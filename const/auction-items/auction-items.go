@@ -18,7 +18,7 @@ var (
 	SoldStatus             uint8 = 21 // 售出
 	CanceledStatus         uint8 = 22 // 手動取消
 	ConsignorFeePaidStatus uint8 = 23 // 寄售人已付手續費
-
+	NoBidsPlacedStatus     uint8 = 24 // 無人下標
 )
 
 // 競標商品 schema
