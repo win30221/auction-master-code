@@ -17,7 +17,7 @@ var (
 )
 
 type Consignor struct {
-	ID                  *uint64    `json:"id"`
+	Id                  *uint64    `json:"id"`
 	Avatar              *string    `form:"avatar" json:"avatar"`
 	Account             *string    `form:"account" json:"account"`
 	Password            *string    `form:"password" json:"password"`
@@ -40,8 +40,8 @@ type Consignor struct {
 }
 
 type ConsignorVerification struct {
-	ID              *uint64    `json:"id"`
-	ConsignorID     *uint64    `form:"consignorID" json:"consignorID"`
+	Id              *uint64    `json:"id"`
+	ConsignorId     *uint64    `form:"consignorId" json:"consignorId"`
 	Photo           *string    `form:"photo" json:"photo"`
 	Name            *string    `form:"name" json:"name"`
 	Identification  *string    `form:"identification" json:"identification"`
@@ -74,12 +74,12 @@ type GetConsignorsRes struct {
 }
 
 type GetConsignorVerificationsReq struct {
-	ConsignorID uint64   `form:"consignorID"` // 如果改成多個，做快取會有刪不到的風險
-	Status      []uint8  `form:"status"`
-	Sort        []string `form:"sort"`
-	Order       []string `form:"order"`
-	Limit       int64    `form:"limit"`
-	Offset      int64    `form:"offset"`
+	ConsignorIds uint64   `form:"consignorId"` // 如果改成多個，做快取會有刪不到的風險
+	Status       []uint8  `form:"status"`
+	Sort         []string `form:"sort"`
+	Order        []string `form:"order"`
+	Limit        int64    `form:"limit"`
+	Offset       int64    `form:"offset"`
 }
 
 type GetConsignorVerificationsRes struct {

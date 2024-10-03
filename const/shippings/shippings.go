@@ -27,11 +27,11 @@ var (
 )
 
 type Shipping struct {
-	ID                         *primitive.ObjectID `json:"id" bson:"_id"`
+	Id                         *primitive.ObjectID `json:"id" bson:"_id"`
 	ActionType                 *uint8              `form:"actionType" json:"actionType" bson:"actionType"`
 	ShipmentType               *uint8              `form:"shipmentType" json:"shipmentType" bson:"shipmentType"`
-	ItemIDs                    *[]uint64           `form:"itemIDs" json:"itemIDs" bson:"itemIDs"`
-	AuctionItemIDs             *[]uint64           `form:"auctionItemIDs" json:"auctionItemIDs,omitempty" bson:"auctionItemIDs,omitempty"`
+	ItemIds                    *[]uint64           `form:"itemIds" json:"itemIds" bson:"itemIds"`
+	AuctionIds                 *[]string           `form:"auctionIds" json:"auctionIds,omitempty" bson:"auctionIds,omitempty"`
 	Address                    *string             `form:"address" json:"address,omitempty" bson:"address,omitempty"`
 	StoreNumber                *string             `form:"storeNumber" json:"storeNumber,omitempty" bson:"storeNumber,omitempty"`
 	StoreName                  *string             `form:"storeName" json:"storeName,omitempty" bson:"storeName,omitempty"`
@@ -46,14 +46,14 @@ type Shipping struct {
 }
 
 type GetShippingsReq struct {
-	AuctionItemID []uint64  `form:"auctionItemID"`
-	Status        []int     `form:"status"` // mongo 查詢沒有 uint8 類型
-	StartAt       time.Time `form:"startAt"`
-	EndAt         time.Time `form:"endAt"`
-	Sort          []string  `form:"sort"`
-	Order         []string  `form:"order"`
-	Limit         int64     `form:"limit"`
-	Offset        int64     `form:"offset"`
+	AuctionIds []string  `form:"auctionId"`
+	Status     []int     `form:"status"` // mongo 查詢沒有 uint8 類型
+	StartAt    time.Time `form:"startAt"`
+	EndAt      time.Time `form:"endAt"`
+	Sort       []string  `form:"sort"`
+	Order      []string  `form:"order"`
+	Limit      int64     `form:"limit"`
+	Offset     int64     `form:"offset"`
 }
 
 type GetShippingsRes struct {

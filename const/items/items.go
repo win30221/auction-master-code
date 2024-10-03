@@ -36,8 +36,8 @@ var (
 )
 
 type Item struct {
-	ID                       *uint64    `form:"id" json:"id"`
-	ConsignorID              *uint64    `form:"consignorID" json:"consignorID"`
+	Id                       *uint64    `form:"id" json:"id"`
+	ConsignorId              *uint64    `form:"consignorId" json:"consignorId"`
 	Type                     *uint8     `form:"type" json:"type"`                                                   // 物品類型
 	IsNew                    *bool      `form:"isNew" json:"isNew" `                                                // 是否全新品
 	Name                     *string    `form:"name" json:"name"`                                                   // 物品名稱
@@ -47,7 +47,7 @@ type Item struct {
 	MaxEstimatedPrice        *int       `form:"maxEstimatedPrice" json:"maxEstimatedPrice"`                         // 最高估價金額
 	ReservePrice             *int       `form:"reservePrice" json:"reservePrice"`                                   // 期望金額(用於最後盯標)
 	ExpireAt                 *time.Time `form:"expireAt" json:"expireAt"`                                           // 過期時間
-	WarehouseID              *string    `form:"warehouseID" json:"warehouseID"`                                     // 存放於倉庫的編號
+	WarehouseId              *string    `form:"warehouseId" json:"warehouseId"`                                     // 存放於倉庫的編號
 	Space                    *uint8     `form:"space" json:"space"`                                                 // 物品占用空間
 	ShippingCostsWithinJapan *int       `form:"shippingCostsWithinJapan" json:"shippingCostsWithinJapan,omitempty"` // 初估日本國內運費
 	GrossWeight              *int       `form:"grossWeight" json:"grossWeight"`                                     // 實際重量
@@ -58,7 +58,7 @@ type Item struct {
 }
 
 type ItemPhoto struct {
-	ItemID    *uint64    `form:"itemID" validate:"required,gt=0" json:"-"`
+	ItemId    *uint64    `form:"itemId" validate:"required,gt=0" json:"-"`
 	Sorted    *uint8     `form:"sorted" validate:"required,gt=0" json:"sorted"`
 	Photo     *string    `form:"photo" validate:"required" json:"photo"`
 	CreatedAt *time.Time `json:"createdAt"`
@@ -66,7 +66,7 @@ type ItemPhoto struct {
 }
 
 type ItemPastStatus struct {
-	ItemID    *uint64    `form:"itemID" validate:"required,gt=0" json:"-"`
+	ItemId    *uint64    `form:"itemId" validate:"required,gt=0" json:"-"`
 	Status    *uint8     `form:"status" validate:"required,gt=0" json:"status"`
 	CreatedAt *time.Time `form:"createdAt" validate:"required" json:"createdAt"`
 }
@@ -77,8 +77,8 @@ type ReorderItemPhotoReq struct {
 }
 
 type GetItemsReq struct {
-	ConsignorID uint64    `form:"consignorID"` // 如果改成多個，做快取會有刪不到的風險
-	WarehouseID string    `form:"warehouseID"`
+	ConsignorId uint64    `form:"consignorId"` // 如果改成多個，做快取會有刪不到的風險
+	WarehouseId string    `form:"warehouseId"`
 	ExpireAt    time.Time `form:"expireAt"`
 	Status      []uint8   `form:"status"`
 	StartAt     time.Time `form:"startAt"`

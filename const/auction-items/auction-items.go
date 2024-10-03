@@ -23,11 +23,11 @@ var (
 
 // 競標商品 schema
 type AuctionItem struct {
-	AuctionID    *string    `form:"auctionID" json:"auctionID"`
-	ConsignorID  *uint64    `form:"consignorID" json:"consignorID"`
-	ItemID       *uint64    `form:"itemID" json:"itemID"`
-	SellerID     *uint64    `form:"sellerID" json:"sellerID"`
-	WatcherID    *uint64    `form:"watcherID" json:"watcherID"`
+	AuctionId    *string    `form:"auctionId" json:"auctionId"`
+	ConsignorId  *uint64    `form:"consignorId" json:"consignorId"`
+	ItemId       *uint64    `form:"itemId" json:"itemId"`
+	SellerId     *uint64    `form:"sellerId" json:"sellerId"`
+	WatcherId    *uint64    `form:"watcherId" json:"watcherId"`
 	Name         *string    `form:"name" json:"name"`
 	Photo        *string    `form:"photo" json:"photo"`
 	ReservePrice *int       `form:"reservePrice" json:"reservePrice"`
@@ -41,8 +41,8 @@ type AuctionItem struct {
 }
 
 type GetAuctionItemsReq struct {
-	ConsignorID uint64    `form:"consignorID"` // 如果改成多個，做快取會有刪不到的風險
-	ItemID      []uint64  `form:"itemID"`
+	ConsignorId uint64    `form:"consignorId"` // 如果改成多個，做快取會有刪不到的風險
+	ItemId      []uint64  `form:"itemId"`
 	Status      []uint8   `form:"status"`
 	StartAt     time.Time `form:"startAt"`
 	EndAt       time.Time `form:"endAt"`

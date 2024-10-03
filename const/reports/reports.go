@@ -48,21 +48,21 @@ type Summary struct {
 }
 
 type Report struct {
-	ID        *primitive.ObjectID `json:"id" bson:"_id"`
+	Id        *primitive.ObjectID `json:"id" bson:"_id"`
 	Reports   *Summary            `json:"reports" bson:"reports"`
 	ReportAt  *time.Time          `json:"reportAt" bson:"reportAt"`
 	CreatedAt *time.Time          `json:"createdAt" bson:"createdAt"`
 }
 
 type Record struct {
-	ID                *primitive.ObjectID `json:"id" bson:"_id"`
+	Id                *primitive.ObjectID `json:"id" bson:"_id"`
 	Type              *int                `form:"type" json:"type" bson:"type"`
 	OpCode            *string             `form:"opCode" json:"opCode" bson:"opCode"`
-	ConsignorID       *uint64             `form:"consignorID" json:"consignorID,omitempty" bson:"consignorID,omitempty"`
+	ConsignorId       *uint64             `form:"consignorId" json:"consignorId,omitempty" bson:"consignorId,omitempty"`
 	ConsignorNickname *string             `form:"consignorNickname" json:"consignorNickname,omitempty" bson:"consignorNickname,omitempty"`
-	ItemIDs           *[]uint64           `form:"itemIDs" json:"itemIDs,omitempty" bson:"itemIDs,omitempty"`
-	AuctionItemIDs    *[]uint64           `form:"auctionItemIDs" json:"auctionItemIDs,omitempty" bson:"auctionItemIDs,omitempty"`
-	ShippingID        *string             `form:"shippingID" json:"shippingID,omitempty" bson:"shippingID,omitempty"`
+	ItemIds           *[]uint64           `form:"itemIds" json:"itemIds,omitempty" bson:"itemIds,omitempty"`
+	AuctionItemIds    *[]string           `form:"auctionItemIds" json:"auctionItemIds,omitempty" bson:"auctionItemIds,omitempty"`
+	ShippingId        *string             `form:"shippingId" json:"shippingId,omitempty" bson:"shippingId,omitempty"`
 	ExchangeRate      *float64            `form:"exchangeRate" json:"exchangeRate,omitempty" bson:"exchangeRate,omitempty"`
 
 	// ===提款相關===
@@ -113,17 +113,17 @@ type GetReportsReq struct {
 }
 
 type GetRecordsReq struct {
-	ConsignorID   uint64    `form:"consignorID"` // 如果改成多個，做快取會有刪不到的風險
-	Type          []int     `form:"type"`
-	ItemID        []uint64  `form:"itemID"`
-	AuctionItemID []uint64  `form:"auctionItemID"`
-	Status        []int     `form:"status"` // mongo 查詢沒有 uint8 類型
-	StartAt       time.Time `form:"startAt"`
-	EndAt         time.Time `form:"endAt"`
-	Sort          []string  `form:"sort"`
-	Order         []string  `form:"order"`
-	Limit         int64     `form:"limit"`
-	Offset        int64     `form:"offset"`
+	ConsignorId    uint64    `form:"consignorId"` // 如果改成多個，做快取會有刪不到的風險
+	Types          []int     `form:"type"`
+	ItemIds        []uint64  `form:"itemId"`
+	AuctionItemIds []uint64  `form:"auctionItemId"`
+	Statuses       []int     `form:"status"` // mongo 查詢沒有 uint8 類型
+	StartAt        time.Time `form:"startAt"`
+	EndAt          time.Time `form:"endAt"`
+	Sort           []string  `form:"sort"`
+	Order          []string  `form:"order"`
+	Limit          int64     `form:"limit"`
+	Offset         int64     `form:"offset"`
 }
 
 type GetRecordsRes struct {

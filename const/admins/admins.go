@@ -9,7 +9,7 @@ var (
 )
 
 type Admin struct {
-	ID        *uint64    `json:"id"`
+	Id        *uint64    `json:"id"`
 	Account   *string    `form:"account" json:"account"`
 	Password  *string    `form:"password" json:"password"` // Argon2 encrypted
 	Status    *uint8     `form:"status" json:"status"`
