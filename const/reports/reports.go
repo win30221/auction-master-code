@@ -61,7 +61,7 @@ type Record struct {
 	ConsignorId       *uint64             `form:"consignorId" json:"consignorId,omitempty" bson:"consignorId,omitempty"`
 	ConsignorNickname *string             `form:"consignorNickname" json:"consignorNickname,omitempty" bson:"consignorNickname,omitempty"`
 	ItemIds           *[]uint64           `form:"itemIds" json:"itemIds,omitempty" bson:"itemIds,omitempty"`
-	AuctionItemIds    *[]string           `form:"auctionItemIds" json:"auctionItemIds,omitempty" bson:"auctionItemIds,omitempty"`
+	AuctionIds        *[]string           `form:"auctionIds" json:"auctionIds,omitempty" bson:"auctionIds,omitempty"`
 	ShippingId        *string             `form:"shippingId" json:"shippingId,omitempty" bson:"shippingId,omitempty"`
 	ExchangeRate      *float64            `form:"exchangeRate" json:"exchangeRate,omitempty" bson:"exchangeRate,omitempty"`
 
@@ -113,17 +113,17 @@ type GetReportsReq struct {
 }
 
 type GetRecordsReq struct {
-	ConsignorId    uint64    `form:"consignorId"` // 如果改成多個，做快取會有刪不到的風險
-	Types          []int     `form:"type"`
-	ItemIds        []uint64  `form:"itemId"`
-	AuctionItemIds []uint64  `form:"auctionItemId"`
-	Statuses       []int     `form:"status"` // mongo 查詢沒有 uint8 類型
-	StartAt        time.Time `form:"startAt"`
-	EndAt          time.Time `form:"endAt"`
-	Sort           []string  `form:"sort"`
-	Order          []string  `form:"order"`
-	Limit          int64     `form:"limit"`
-	Offset         int64     `form:"offset"`
+	ConsignorId uint64    `form:"consignorId"` // 如果改成多個，做快取會有刪不到的風險
+	Types       []int     `form:"type"`
+	ItemIds     []uint64  `form:"itemId"`
+	AuctionIds  []string  `form:"auctionId"`
+	Statuses    []int     `form:"status"` // mongo 查詢沒有 uint8 類型
+	StartAt     time.Time `form:"startAt"`
+	EndAt       time.Time `form:"endAt"`
+	Sort        []string  `form:"sort"`
+	Order       []string  `form:"order"`
+	Limit       int64     `form:"limit"`
+	Offset      int64     `form:"offset"`
 }
 
 type GetRecordsRes struct {
