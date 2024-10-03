@@ -23,23 +23,21 @@ var (
 
 // 競標商品 schema
 type AuctionItem struct {
-	ID                       *uint64    `json:"id"`
-	ConsignorID              *uint64    `form:"consignorID" json:"consignorID"`
-	ItemID                   *uint64    `form:"itemID" json:"itemID"`
-	SellerID                 *uint64    `form:"sellerID" json:"sellerID"`
-	WatcherID                *uint64    `form:"watcherID" json:"watcherID"`
-	AuctionID                *string    `form:"auctionID" json:"auctionID"`
-	Name                     *string    `form:"name" json:"name"`
-	Photo                    *string    `form:"photo" json:"photo"`
-	ReservePrice             *int       `form:"reservePrice" json:"reservePrice"`
-	CurrentPrice             *int       `form:"currentPrice" json:"currentPrice"`
-	HighestPrice             *int       `form:"highestPrice" json:"highestPrice"`
-	CloseAt                  *time.Time `form:"closeAt" json:"closeAt"`
-	ClosedPrice              *int       `form:"closedPrice" json:"closedPrice"`
-	ShippingCostsWithinJapan *int       `form:"shippingCostsWithinJapan" json:"shippingCostsWithinJapan"`
-	Status                   *uint8     `form:"status" json:"status"`
-	CreatedAt                *time.Time `json:"createdAt"`
-	UpdatedAt                *time.Time `json:"updatedAt"`
+	AuctionID    *string    `form:"auctionID" json:"auctionID"`
+	ConsignorID  *uint64    `form:"consignorID" json:"consignorID"`
+	ItemID       *uint64    `form:"itemID" json:"itemID"`
+	SellerID     *uint64    `form:"sellerID" json:"sellerID"`
+	WatcherID    *uint64    `form:"watcherID" json:"watcherID"`
+	Name         *string    `form:"name" json:"name"`
+	Photo        *string    `form:"photo" json:"photo"`
+	ReservePrice *int       `form:"reservePrice" json:"reservePrice"`
+	CurrentPrice *int       `form:"currentPrice" json:"currentPrice"`
+	HighestPrice *int       `form:"highestPrice" json:"highestPrice"`
+	CloseAt      *time.Time `form:"closeAt" json:"closeAt"`
+	ClosedPrice  *int       `form:"closedPrice" json:"closedPrice"`
+	Status       *uint8     `form:"status" json:"status"`
+	CreatedAt    *time.Time `json:"createdAt"`
+	UpdatedAt    *time.Time `json:"updatedAt"`
 }
 
 type GetAuctionItemsReq struct {
