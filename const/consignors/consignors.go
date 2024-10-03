@@ -74,12 +74,12 @@ type GetConsignorsRes struct {
 }
 
 type GetConsignorVerificationsReq struct {
-	ConsignorIds uint64   `form:"consignorId"` // 如果改成多個，做快取會有刪不到的風險
-	Status       []uint8  `form:"status"`
-	Sort         []string `form:"sort"`
-	Order        []string `form:"order"`
-	Limit        int64    `form:"limit"`
-	Offset       int64    `form:"offset"`
+	ConsignorId uint64   `form:"consignorId"` // 如果改成多個，做快取會有刪不到的風險
+	Status      []uint8  `form:"status"`
+	Sort        []string `form:"sort"`
+	Order       []string `form:"order"`
+	Limit       int64    `form:"limit"`
+	Offset      int64    `form:"offset"`
 }
 
 type GetConsignorVerificationsRes struct {
