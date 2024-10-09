@@ -42,7 +42,7 @@ type AuctionItem struct {
 
 type GetAuctionItemsReq struct {
 	ConsignorId uint64    `form:"consignorId"` // 如果改成多個，做快取會有刪不到的風險
-	ItemId      []uint64  `form:"itemId"`
+	AuctionId   []string  `form:"auctionId"`
 	Status      []uint8   `form:"status"`
 	StartAt     time.Time `form:"startAt"`
 	EndAt       time.Time `form:"endAt"`
