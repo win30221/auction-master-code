@@ -31,6 +31,7 @@ const (
 	InvalidDateRange             = "1114" // 超出時間範圍
 	QueryLimitExceeded           = "1115" // 查詢已達上限
 	PhotoLimitExceeded           = "1116" // 照片已達上限
+	LineIdBindingConflict        = "1117" // Line 綁定衝突
 
 	// 3000 jobs
 	Jobs = "3000"
