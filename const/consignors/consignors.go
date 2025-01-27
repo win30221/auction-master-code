@@ -22,6 +22,7 @@ type Consignor struct {
 	Account             *string    `form:"account" json:"account"`
 	Password            *string    `form:"password" json:"password"`
 	Nickname            *string    `form:"nickname" json:"nickname"`
+	LineId              *string    `form:"lineId" json:"lineId"`
 	CommissionBonusRate *float64   `form:"commissionBonusRate" json:"commissionBonusRate"`
 	Name                *string    `form:"name" json:"name"`
 	Identification      *string    `form:"identification" json:"identification"`
