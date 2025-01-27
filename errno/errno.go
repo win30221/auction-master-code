@@ -32,6 +32,7 @@ const (
 	QueryLimitExceeded           = "1115" // 查詢已達上限
 	PhotoLimitExceeded           = "1116" // 照片已達上限
 	LineIdBindingConflict        = "1117" // Line 綁定衝突
+	LineIdBindingLinkExpired     = "1118" // Line 綁定連結已過期
 
 	// 3000 jobs
 	Jobs = "3000"
